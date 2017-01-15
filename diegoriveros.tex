@@ -1,6 +1,9 @@
 %% inicio, la clase del documento es iccmemoria.cls
 \documentclass{iccmemoria}
 \usepackage{float}
+\usepackage{booktabs}% http://ctan.org/pkg/booktabs
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+%%\usepackage{tabularx}
 
 %% datos generales y para la tapa
 \titulo{Título de la Memoria}
@@ -231,6 +234,90 @@ Para solventar la solución, se realiza investigación respecto a las tecnologías 
 Finalmente, se opta por la utilización de Ninja Framework, al ser éste un framework web Full Stack, construido con java puro, lo cual facilita la curva de aprendizaje. Adicionalmente, se consideró este framework debido a que usa tecnologías maduras (robustas) ante la experimentación.
 
 \subsection{Dise\~{n}o funcional}
+
+\begin{table}[h]
+	\vspace*{1cm}
+	\begin{tabular}{|c|p{4cm}|c|p{7cm}|}
+		\hline
+			\multicolumn{4}{|l|}{
+				\begin{tabular}{p{3cm}|p{4in}}
+				Actores &  Sistema, Estudiante
+				\end{tabular}
+			}
+			\\ 
+		\hline
+			\multicolumn{4}{|l|}{
+				\begin{tabular}{p{3cm}|p{4in}}
+				Propósito &  Permitir al estudiante postular a una oferta de práctica. 
+				\end{tabular}
+			}
+			\\
+		\hline
+			\multicolumn{4}{|l|}{
+				\begin{tabular}{p{3cm}|p{4in}}
+					Pre-Condición & \tabitem Usuario logueado correctamente en aplicación. \\
+					& \tabitem Ingresar al módulo de ofertas. \\
+					& \tabitem Debe existir una oferta de práctica creada.
+				\end{tabular}
+			}
+			\\
+		\hline
+			\multicolumn{4}{|l|}{
+				\begin{tabular}{p{3cm}|p{4in}}
+					Post-Condición & El estudiante postula exitosamente a una oferta.
+				\end{tabular}
+			}
+			\\
+		\hline
+			\multicolumn{4}{|l|}{
+				\begin{tabular}{p{3cm}|p{4in}}
+					Requerimientos Cubiertos & RF007
+				\end{tabular}
+			}
+			\\
+		\hline
+			\multicolumn{4}{|l|}{
+				Curso Normal de Eventos
+			}
+			\\
+		\hline
+		Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+		1 & Estudiante presiona el botón ``Ver detalle'' de una oferta & 2 & Sistema despliega la vista con la información detallada de la oferta. \\ \hline
+		3 & Estudiante presiona botón ``Postular a esta oferta''. & 4 & Sistema muestra modal que permite adjuntar una versión actualizada del currículum del estudiante. \\ \hline
+		5 & Estudiante adjunta curriculum. Luego presiona el botón ``Postular''. & 6 & Sistema devuelve un mensaje indicando que la postulación se realizó correctamente y retorna al menú de Ofertas. \\ \hline
+		& & 7 & Fin. \\ \hline
+		\multicolumn{4}{|l|}{
+			Curso Alternativo: Estudiante no adjunta curriculum (Flujo se inicia en paso 4).
+		}
+		\\ \hline
+		Paso & 
+		\multicolumn{3}{c|}{
+			Detalle de Curso Aternativo
+		} \\ \hline
+		5 & \multicolumn{3}{l|}{
+			Estudiante presiona botón ``Postular''.
+		} \\ \hline
+		6 & \multicolumn{3}{l|}{
+			Continúa en paso 6 de flujo normal.
+		} \\ \hline
+		\multicolumn{4}{|l|}{
+			Curso Alternativo: Sistema falla al realizar postulación (Flujo se inicia en paso 5).
+		}
+		\\ \hline
+		Paso & 
+		\multicolumn{3}{c|}{
+			Detalle de Curso Aternativo
+		} \\ \hline
+		6 & \multicolumn{3}{p{11cm}|}{
+			Sistema devuelve mensaje indicando que ha ocurrido un error y retorna al menú de Ofertas.
+		} \\ \hline
+		7 & \multicolumn{3}{l|}{
+			Fin.
+		} \\ \hline
+		\end{tabular}
+	\vspace*{1cm}
+	\caption{Cuadro descriptivo de opciones frameworks frontend}
+\end{table}
 
 \subsection{Dise\~{n}o t\'{e}cnico}
 
