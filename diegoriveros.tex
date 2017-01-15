@@ -1,0 +1,366 @@
+%% inicio, la clase del documento es iccmemoria.cls
+\documentclass{iccmemoria}
+\usepackage{float}
+
+%% datos generales y para la tapa
+\titulo{Título de la Memoria}
+\author{Diego Ignacio Riveros Pinilla}
+\supervisor{Ben Ingram}
+\informantes
+{Federico Meza}
+{Renzo Angles}
+\adicional{(sólo por si se necesita agregar algún otro profesor)}
+\director{Federico Meza}
+\date{Diciembre, 2016}
+
+%% inicio de documento
+\begin{document}
+
+%% crea la tapa
+\maketitle
+
+%% dedicatoria
+\begin{dedicatory}
+Dedicado a la Tuti
+\end{dedicatory}
+
+%% agradecimientos
+\begin{acknowledgment}
+Agradecimientos a Tuti, por el apoyo brindado en todo el proceso del desarrollo de mi memoria de t\'{i}tulo
+\end{acknowledgment}
+
+%% indices
+\tableofcontents
+\listoffigures
+\listoftables
+
+%% resumen
+\begin{resumen}
+Aquí va el resumen (en Castellano)... 
+\end{resumen}
+
+%% abstract
+
+%% contenido del primer capítulo
+\chapter{Introducci\'{o}n}
+
+En la presente memoria de título se definen  las principales características del Software a desarrollar: ``PRACUTAL'', el cual garantiza prestar un apoyo fundamental a la Gestión del Centro de Prácticas, perteneciente a la Facultad de Ingeniería de la Universidad de Talca.
+
+Respecto al Centro de Prácticas como entidad, es necesario definir su función, la cual consiste principalmente en proveer y regular prácticas, memorias y ofertas de trabajo, a los estudiantes de la Facultad, proceso que en la actualidad resulta bastante engorroso al momento de llevar a cabo estas tareas.
+
+Con la implementación de PRACUTAL, se resuelve una de las principales problemáticas existentes en la formación  integral y práctica de profesionales, la cual es estandarizar el proceso de toma de prácticas para todas las carreras, con el fin de optimizar y centralizar la información.
+
+El Sistema a desarrollar surge por la necesidad de prestar apoyo a la Gestión de trabajos prácticos al interior de la Facultad de Ingeniería, con lo cual esta herramienta permitiría la administración de los trabajos de todas las carreras, recursos, tareas y demás funciones y actores relacionados con el Centro de Prácticas, organismo fundamental dentro de la Universidad.
+
+Cabe destacar que el Sistema se fundamenta en una base de requerimientos presentados por el organismo, y contempla una gran cantidad de funcionalidades, a las cuales se añaden otras concernientes netamente a aspectos internos que se desean satisfacer y cubrir dentro de la Unidad.
+
+Con respecto a la documentación del Software, se incluyen todos los puntos principales que se deben definir en todo sistema que se desarrolla, como son: descripción general, ámbito y funciones del sistema; diseño funcional y técnico; arquitectura y tecnologías relacionadas. Todo lo anterior, sumado a la caracterización de usuarios que manejarán el sistema.
+
+La documentación debe contener asimismo, modelos y diagramas referentes al Sistema, como son: modelos de caso de uso, con su respectiva definición y especificación; modelo de datos, diagramas de arquitectura y diseño de clases esenciales para la implementación de la aplicación.
+
+Se incluye además, un diseño de interfaz de fácil entendimiento y cómoda utilización, siguiendo estándares globales de experiencia de usuario para un eficiente manejo de la aplicación y un máximo desempeño de las tareas de gestión y comunicación entre los actores.
+
+\section{Descripci\'{o}n del contexto}
+
+\subsection{Trabajo relacionado}
+Esta memoria de título nace como mejora a un proyecto que consistía en la creación de una plataforma de apoyo para la labor del recientemente creado Centro de prácticas de la facultad de Ingeniería, esto durante el ramo de Taller de Software II (año 2013), el cual finalmente, no se concretó.
+
+\section{Descripci\'{o}n del problema}
+Actualmente existe la necesidad de contar con una plataforma que centralice la información de los estudiantes, organizaciones y trabajos prácticos de manera rápida y oportuna. La tarea de reunir y gestionar estos antecedentes es larga y compleja; sumando a todo esto, que el proceso es ejecutado manualmente.
+
+\section{Propuesta soluci\'{o}n}
+Para resolver esta problemática, se decide generar un software que apoye en gran manera a la gestión del centro de prácticas, a través de un aplicativo web, en el cual se podrá realizar un flujo completo e integral del proceso actual de manera sistémica, partiendo desde que se crea una oferta de trabajo práctico; el alumno se adjudica dicha oferta; y, finalmente se evalúa su desempeño.
+Dentro del flujo de trabajo, se establecen cuatro actores, que son: Organización, Centro de Prácticas, Estudiante y Director de Escuela.
+Este sistema será implementado de acuerdo a los detalles técnicos que a continuación se mencionan:
+\begin{itemize}
+	\item Lenguaje Java 1.7
+	\item Ninja Framework
+	\item Base de datos PostgreSQL 9.6
+	\item HTML 5 con Materialize CSS
+	\item Servidor Jetty (embebido en Ninja)
+\end{itemize}
+
+\section{Objetivos}
+En el siguiente apartado se establecen los objetivos del proyecto, tanto general como específico, los que dan pie a la concepción de la implementación de la aplicación.
+
+\subsection{Objetivo general}
+Crear una plataforma en apoyo a la Gestión eficaz del Centro de Prácticas de la facultad de Ingeniería de la Universidad de Talca (PRACUTAL).
+
+\subsection{Objetivos espec\'{i}ficos}
+\begin{itemize}
+	\item Facilitar o sustituir el proceso de gestión de trabajos prácticos, el cual hoy en día se realiza de forma ``manual'' y tediosa
+	\item Optimizar el nivel de información que se tiene respecto a los trabajos prácticos de los estudiantes
+	\item Entregar opciones de prácticas a los estudiantes de manera más centralizada
+	\item Estandarizar el proceso de trabajos prácticos para toda la facultad de Ingeniería
+	\item Agilizar el proceso de evaluación de prácticas
+	\item Acceso transversal a todo el universo de estudiantes para poder ofertar trabajos prácticos, ya sea por las empresas o el propio centro de prácticas.
+\end{itemize}
+
+\section{Alcance}
+El proyecto consiste en la Implementación de un nuevo y mejorado Sistema de gestión para el Centro de prácticas de la facultad de Ingeniería de la Universidad de Talca (PRACUTAL), enmarcado en el diseño incluido en este documento, durante la duración de esta memoria de título.
+PRACUTAL permitirá:
+\begin{itemize}
+	\item Implementar y gestionar los módulos: Administración, Ofertas y Prácticas, cada uno con distintas tareas inmersas.
+	\item Crear y gestionar ofertas de trabajos prácticos.
+	\item Crear y mantener perfiles de usuario e información actualizada y vigente.
+	\item Gestionar los trabajos prácticos de las carreras de: Ingeniería Civil Industrial, Ingeniería Civil en Computación, Ingeniería Civil Mecánica, Ingeniería Civil en Obras Civil, Ingeniería Civil en Mecatrónica.
+\end{itemize}
+
+\subsection{Consideraciones}
+En el presente apartado se mencionan las consideraciones que se deben contemplar en el proyecto:
+\begin{itemize}
+	\item Acceso a la información de los estudiantes/empresas/centro de prácticas.
+ 	\item Se dejará aplicación operativa para su implantación.
+ 	\item La Universidad debe proveer Servidor para alojar aplicativo.
+ 	\item Se deben utilizar los perfiles de usuario establecidos en el diseño de la solución.
+\end{itemize}
+
+\subsection{Restricciones}
+\begin{itemize}
+	\item La aplicación debe permitir su acceso desde el portal principal que posee la Universidad (www.utalca.cl/....).
+\end{itemize}
+
+\subsection{Supuestos}
+\begin{itemize}
+	\item Existirá fluidez para la obtención de información para la realización de este proyecto.
+	\item El Centro de prácticas realizará carga masiva inicial de información al sistema.
+	\item El Centro de prácticas será el encargado de crear las cuentas de usuario para los diferentes actores considerados.
+	\item En un futuro se homologarán estilos de diseño del aplicativo, de acuerdo a los utilizados en portal de la Universidad.
+\end{itemize}
+
+\section{Resumen del cap\'{i}tulo}
+%%COMPLETAR ESTA SECCION
+
+%% contenido del segundo capítulo
+\chapter{Marco te\'{o}rico}
+
+\section{Contexto}
+En la actualidad, existe un sistema inform\'{i}tico llamado PRACUTAL, cuyo prop\'{o}sito principal es llevar la gesti\'{o}n de trabajos pr\'{i}cticos dentro de la Universidad. Esta aplicaci\'{o}n, surge de la necesidad de apoyar precisamente, la labor del Centro de Pr\'{i}cticas de la Facultad de Ingenier\'{i}a. Fue creado a fines del año 2013, en el marco del convenio de desempeño de armonizaci\'{o}n curricular suscrito por la Universidad con el Ministerio de Educaci\'{o}n.
+Durante el segundo semestre del año 2013, se crea el primer prototipo del sistema PRACUTAL en el marco de la asignatura de Taller de Desarrollo de Software II, de la carrera de Ingenier\'{i}a Civil en Computaci\'{o}n que imparte la Universidad.
+
+Para el desarrollo del prototipo, se define como estrategia dividir al curso completo en cuatro grupos, entregando a cada uno la tarea espec\'{i}fica de diseño y propuesta del sistema. Cabe señalar, que en el momento se adjudic\'{o} el desarrollo al equipo cuya soluci\'{o}n se ajustaba en gran manera a las expectativas. 
+A modo de antecedente, se indica que el desarrollo del sistema comienza en Marzo del año 2014, por los propios estudiantes.
+\\
+
+Sólo para probar algunas cosas como las referencias.
+La primera cita es a Lamport~\cite{lamport79}.
+La segunda cita es para Lamport nuevamente~\cite{lamport78}.
+La última cita es para Keleher \emph{et al.}~\cite{keleher92}.
+
+
+%% contenido del tercer capítulo
+\chapter{Metodolog\'{i}as}
+
+\section{Metodolog\'{i}as \'{A}giles de desarrollo}
+
+\subsection{Agile}
+Como antecedente, se tiene que los diseñadores de software durante los últimos 50 años han mantenido como premisa basar el ciclo de vida de un proyecto bajo la metodología de cascada. El asunto es que el desarrollo del proyecto nunca se lleva a cabo de manera secuencial, ya que la aparición de cambios a medida que avanza supone rectificar pasos anteriores.
+Agile, se define como un marco de trabajo basado en un manifiesto publicado en el año 2001 cuyos principios son el valor del ``work in progress'', la responsabilidad de cada individuo durante el desarrollo y una actitud positiva de respuesta frente a los cambios. Corresponde a una metodología propia que acepta que los problemas no estén bien definidos y que el desarrollo del proyecto sea dinámico y esté abierto a los cambios.
+
+\subsection{Kanban}
+Kanban es un marco popular que utilizan los equipos de software que practican el desarrollo de software ágil. Esta metodología se remonta a más de 50 años.
+
+\subsection{Tablero de Kanban}
+El trabajo de todos los equipos de kanban gira en torno a un tablero de kanban, el cual corresponde a una herramienta que se utiliza para visualizar el trabajo y optimizar el flujo del trabajo entre el equipo. Aunque los tableros físicos son de gran popularidad entre algunos equipos, los tableros virtuales son una funcionalidad esencial de cualquier herramienta de desarrollo de software ágil para su seguimiento, una colaboración más sencilla y la accesibilidad desde múltiples ubicaciones.
+Independientemente de si el tablero del equipo es físico o digital, su función es garantizar que el trabajo del equipo se visualice, que su flujo de trabajo se unifique y que se identifiquen y resuelvan inmediatamente todos los factores que lo bloqueen y de los que dependan. 
+
+\subsection{Pasos de un tablero de kanban b\'{a}sico}
+En un desarrollo de proyecto Agile utilizando Kanban, el proyecto se planifica dentro de un flujo de trabajo de tres pasos: 
+\begin{itemize}
+	\item Por hacer
+	\item En curso y;
+	\item Hecho. 
+\end{itemize}
+Cabe señalar que dependiendo del tamaño, la estructura y los objetivos del equipo, el flujo de trabajo se puede asignar para cumplir el proceso único de cualquier equipo determinado.
+La metodología kanban se basa en una transparencia total del trabajo y una comunicación en tiempo real de la capacidad. Por lo tanto, el tablero de kanban debería considerarse la única fuente fiable sobre el trabajo del equipo.
+
+Sólo para incluir figuras y tablas.
+\begin{figure}[h]
+\vspace*{1cm}
+\includegraphics[bb=0 0 640 480, width=.5\linewidth]{latexlogo.png}
+\vspace*{1cm}
+\caption{La primera figura de la memoria}
+\end{figure}
+\begin{table}[h]
+\vspace*{1cm}
+(aqui debiera ir la tabla)
+\vspace*{1cm}
+\caption{La primera tabla de la memoria}
+\end{table}
+
+%%PUNTO 4
+\chapter{Desarrollo de la soluci\'{o}n}
+
+\section{Definiciones previas}
+En el siguiente capítulo se detallan a nivel técnico, la arquitectura y tecnologías utilizadas; se definen tanto el diseño funcional y técnico como los niveles de acceso a la información (gestión de perfiles) implementados en este proyecto.
+
+\subsection{Arquitectura}
+La solución presenta una Arquitectura basada en Java, organizada en los siguientes componentes lógicos.
+\begin{itemize}
+	\item Capa de Presentación.
+	\item Capa de Servicios.
+	\item Capa de Proceso de Negocio
+	\item Capa de Datos.
+\end{itemize}
+Para la implementación de este proyecto se definió realizar una aplicación web bajo la Arquitectura Full Stack la cual se visualiza en el siguiente diagrama:
+
+\begin{figure}[H]
+	\vspace*{1cm}
+	\includegraphics[bb=0 0 640 480, width=\linewidth]{ARQ.png}
+	\vspace*{1cm}
+	\caption{Diagrama de tecnolog\'{i}as}
+\end{figure}
+
+Descripción del Diagrama:
+\begin{enumerate}
+	\item El usuario interactúa con la aplicación a través del navegador web, realizando peticiones HTTP.
+	\item Las peticiones son procesadas por el Framework a través del Router.
+	\item El Router enruta al controlador que procesará la petición.
+	\item El Controlador invoca a los servicios del negocio para procesarlo.
+	\item Si es necesario obtener datos, el servicio se comunica con la capa de datos la cual se encarga de entregar y recibir información desde y hacia la base de datos.
+	\item Una vez procesada la información, el controlador despliega la información en la capa de vista.
+\end{enumerate}
+
+\subsection{Tecnolog\'{i}as}
+Para solventar la solución, se realiza investigación respecto a las tecnologías actuales que ofrece el mercado open source para el desarrollo de aplicaciones considerando como alternativas de implementación 3 opciones:
+\begin{itemize}
+	\item Aplicación Web en Java con Spring Framework.
+	\item Aplicación Web en Java con Ninja Framework.
+	\item Aplicación Web en Java con Play Framework.
+\end{itemize}
+Finalmente, se opta por la utilización de Ninja Framework, al ser éste un framework web Full Stack, construido con java puro, lo cual facilita la curva de aprendizaje. Adicionalmente, se consideró este framework debido a que usa tecnologías maduras (robustas) ante la experimentación.
+
+\subsection{Dise\~{n}o funcional}
+
+\subsection{Dise\~{n}o t\'{e}cnico}
+
+\subsection{Gesti\'{o}n de perfiles}
+Para solventar el correcto comportamiento de la aplicación, se han establecido una serie de perfiles de usuario, los cuales cuentan con distintos privilegios dependiendo del nivel de acceso  a la información que se requiera y otorgue.
+
+\subsubsection{Tipos de usuario}
+El ingreso al sistema será mediante el nombre de usuario de correo electrónico registrado, y se facilitará un link de acceso inicial donde el actor establecerá su contraseña.
+Los tipos de usuario definidos inicialmente corresponden a cuatro perfiles, los cuales se detallan a continuación:
+
+\begin{itemize}
+	\item Centro de Prácticas: Rol de administrador con acceso a prácticamente a todas las funcionalidades del sistema.
+	\item Director de Escuela: Su rol es validar académicamente los trabajos prácticos ofertados.
+	\item Estudiante: El rol del estudiante se basa principalmente en postular a ofertas vigentes y llevar registro de su trabajo. 
+	\item Organización: Tiene como función, ofertar trabajos prácticos, seleccionar y evaluar a los estudiantes.
+\end{itemize}
+Tareas específicas por perfil
+\\
+Centro de prácticas:
+\begin{itemize}
+	\item Ofertar prácticas para alumnos de la facultad.
+	\item Visualizar evaluación de trabajo práctico.
+	\item Revisar si oferta de práctica cumple con los requisitos que la universidad establece.
+	\item Enviar candidatos a la Organización.
+	\item Mantener módulo de administración del sistema.
+\end{itemize}
+Director de escuela:
+\begin{itemize}
+	\item Ofertar prácticas para alumnos de la facultad.
+	\item Visualizar evaluación de trabajo práctico.
+	\item Revisar si oferta de práctica cumple con los requisitos que la universidad establece.
+	\item Enviar candidatos a la Organización. 
+\end{itemize}
+Estudiante:
+\begin{itemize}
+	\item Ingresar prácticas conseguidas de manera individual.
+	\item Postular a alguna práctica ofertada en la plataforma.
+	\item Llevar una bitácora de la práctica adjudicada.
+\end{itemize}
+Organización:
+\begin{itemize}
+	\item Ofertar prácticas para alumnos de la facultad según sus habilidades y conocimientos.
+	\item Escoger potenciales candidatos para adjudicarse una práctica.
+	\item Evaluar trabajo práctico del alumno una vez concluido.
+\end{itemize}
+
+\section{Etapa exploraci\'{o}n de aplicaci\'{o}n web}
+Esta etapa corresponde al análisis de algunas de las tecnologías que son utilizadas hoy en día en el desarrollo de aplicaciones web.
+
+\subsection{Bootstrap, Foundation, Materialize}
+Dentro del análisis de prefactibilidad del desarrollo de la aplicación, se tiene como objetivo poder afianzar y fortalecer mis capacidades. Dado lo anterior, se establecen una serie de consideraciones necesarias para la implementación del software de manera eficaz y eficiente, las que se indican a continuación:
+
+\begin{itemize}
+	\item Aplicación con interfaz llamativa y amigable para el usuario.
+	\item Lograr integración rápida entre lógica de negocio e interfaz gráfica.
+	\item Optimizar tiempo de diseño gráfico.
+	\item Aplicación responsiva.
+\end{itemize}
+
+Con estos puntos como base, es que se analizan las tendencias de diseño web, donde algunas de las principales son: Bootstrap, Foundation y Materialize, de los cuales podemos comparar su principal característica como front-end.
+
+\begin{table}[h]
+	\vspace*{1cm}
+	\begin{tabular}{|p{4.6cm}|p{4.6cm}|p{4.6cm}|}
+		\hline
+		\textbf{Bootstrap} & \textbf{Foundation} & \textbf{Materialize} \\ \hline
+		Es el framework basado en HTML, CSS y JS más popular en estos tiempos, sirve para desarrollar interfaces de usuario con interacción. & Framework front-end avanzado, el cual es utilizado para desarrollo de aplicaciones responsivas. & Moderno framework front-end que está basado en los principios de Material Design de Google. \\ \hline
+		\end{tabular}
+	\vspace*{1cm}
+	\caption{Cuadro descriptivo de opciones frameworks frontend}
+\end{table}
+
+De acuerdo a lo investigado y a la experiencia previa, se decide utilizar Materialize, debido a que sus componentes por defecto son atractivos y no necesita demasiada intervención para que su interfaz visual sea amigable y de bonito aspecto. 
+Por el contrario, se descarta Bootstrap, ya que su estándar de diseño está muy repetido en aplicaciones web y se requiere de demasiado conocimiento o inversión en aprendizaje para lograr una interfaz visualmente llamativa. Asimismo, no se opta por Foundation ya que debía realizar un aprendizaje desde cero para lograr extraer su máximo potencial y al igual que Bootstrap se necesita tener una mayor noción en diseño web.
+
+\subsection{Prueba de concepto (POC)}
+Para comprobar si es viable la utilización de Ninja Framework, resulta necesario poder realizar una prueba de concepto, para determinar si efectivamente es factible montar una aplicación web con las características de este proyecto y permite tener una visión del esfuerzo a incurrir en el desarrollo.
+Se detalla experiencia a continuación:
+\begin{enumerate}
+\item Se procede a instalar jdk versión 1.7 en máquina local.
+\item Siguiendo la documentación del sitio de www.ninjaframework.org se descarga versión Maven actualizada de acuerdo a sitio oficial.
+\item Se procede a descargar el arquetipo de ejemplo de Ninja Framework.
+\item Dicho ejemplo cuenta con las operaciones básicas de cualquier aplicación (CRUD) y se prueba su correcto funcionamiento.
+\item Cabe señalar, que con el ejemplo y documentación, se logra entender y aprender cómo funciona Ninja y a su vez se ajusta para el desarrollo del proyecto.
+\item Dadas las pruebas exitosas, se procede a reemplazar Bootstrap por Materialize, debido a que el primero se encuentra embebido en el framework.
+\end{enumerate}
+Cabe señalar, que el ejemplo utilizado en la prueba de concepto corresponde a una demostración de un sitio web tipo ``Blog'', donde la página principal es la operación de listar los artículos del Blog. Como segunda operación, se puede crear un nuevo artículo y posteriormente, como tercera operación, se puede editar algún artículo. Se incluye la operación de eliminar un artículo y finalmente, visualizar un artículo en detalle.
+La siguiente figura muestra a modo de diagrama las operaciones CRUD.	
+
+\begin{figure}[H]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{CRUD.png}
+	\vspace*{1cm}
+	\caption{Operaciones CRUD}
+\end{figure}
+
+
+%% ambiente glosario
+\begin{glosario}
+\item[El primer término:] Este es el significado del primer término, realmente no se bien lo que significa pero podría haberlo averiguado si hubiese tenido un poco mas de tiempo.
+\item[El segundo término:] Este si se lo que significa pero me da lata escribirlo...
+\end{glosario}
+
+
+%% genera las referencias
+\bibliography{refs}
+
+
+%% comienzo de la parte de anexos
+\appendixpart
+
+%% contenido del primer anexo
+\appendix{El Primer Anexo}
+Aquí va el texto del primer anexo...
+
+\section{La primera sección del primer anexo}
+Aquí va el texto de la primera sección del primer anexo...
+
+\section{La segunda sección del primer anexo}
+Aquí va el texto de la segunda sección del primer anexo...
+
+\subsection{La primera subsección de la segunda sección del primer anexo}
+
+
+%% contenido del segundo anexo
+\appendix{El segundo Anexo}
+Aquí va el texto del segundo anexo...
+
+\section{La primera sección del segundo anexo}
+Aquí va el texto de la primera sección del segundo anexo...
+
+%% fin
+\end{document}
