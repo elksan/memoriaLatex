@@ -3,6 +3,8 @@
 \usepackage{float}
 \usepackage{booktabs}% http://ctan.org/pkg/booktabs
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\usepackage{longtable}
+\usepackage{paralist}
 %%\usepackage{tabularx}
 
 %% datos generales y para la tapa
@@ -235,89 +237,261 @@ Finalmente, se opta por la utilización de Ninja Framework, al ser éste un framew
 
 \subsection{Dise\~{n}o funcional}
 
-\begin{table}[h]
-	\vspace*{1cm}
-	\begin{tabular}{|c|p{4cm}|c|p{7cm}|}
-		\hline
-			\multicolumn{4}{|l|}{
-				\begin{tabular}{p{3cm}|p{4in}}
-				Actores &  Sistema, Estudiante
+\begin{enumerate}
+	\item Caso de Uso C001 - Postular a una oferta
+		\begin{table}[H]
+			\vspace*{1cm}
+			\begin{tabular}{|c|p{4cm}|c|p{7cm}|}
+				\hline
+					\multicolumn{4}{|l|}{
+						\begin{tabular}{p{3cm}|p{4in}}
+						Actores &  Sistema, Estudiante
+						\end{tabular}
+					}
+					\\ 
+				\hline
+					\multicolumn{4}{|l|}{
+						\begin{tabular}{p{3cm}|p{4in}}
+						Propósito &  Permitir al estudiante postular a una oferta de práctica. 
+						\end{tabular}
+					}
+					\\
+				\hline
+					\multicolumn{4}{|l|}{
+						\begin{tabular}{p{3cm}|p{4in}}
+							Pre-Condición & \tabitem Usuario logueado correctamente en aplicación. \\
+							& \tabitem Ingresar al módulo de ofertas. \\
+							& \tabitem Debe existir una oferta de práctica creada.
+						\end{tabular}
+					}
+					\\
+				\hline
+					\multicolumn{4}{|l|}{
+						\begin{tabular}{p{3cm}|p{4in}}
+							Post-Condición & El estudiante postula exitosamente a una oferta.
+						\end{tabular}
+					}
+					\\
+				\hline
+					\multicolumn{4}{|l|}{
+						\begin{tabular}{p{3cm}|p{4in}}
+							Requerimientos Cubiertos & RF007
+						\end{tabular}
+					}
+					\\
+				\hline
+					\multicolumn{4}{|l|}{
+						Curso Normal de Eventos
+					}
+					\\
+				\hline
+				Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+				1 & Estudiante presiona el botón ``Ver detalle'' de una oferta & 2 & Sistema despliega la vista con la información detallada de la oferta. \\ \hline
+				3 & Estudiante presiona botón ``Postular a esta oferta''. & 4 & Sistema muestra modal que permite adjuntar una versión actualizada del currículum del estudiante. \\ \hline
+				5 & Estudiante adjunta curriculum. Luego presiona el botón ``Postular''. & 6 & Sistema devuelve un mensaje indicando que la postulación se realizó correctamente y retorna al menú de Ofertas. \\ \hline
+				& & 7 & Fin. \\ \hline
+				\multicolumn{4}{|l|}{
+					Curso Alternativo: Estudiante no adjunta curriculum (Flujo se inicia en paso 4).
+				}
+				\\ \hline
+				Paso & 
+				\multicolumn{3}{c|}{
+					Detalle de Curso Aternativo
+				} \\ \hline
+				5 & \multicolumn{3}{l|}{
+					Estudiante presiona botón ``Postular''.
+				} \\ \hline
+				6 & \multicolumn{3}{l|}{
+					Continúa en paso 6 de flujo normal.
+				} \\ \hline
+				\multicolumn{4}{|l|}{
+					Curso Alternativo: Sistema falla al realizar postulación (Flujo se inicia en paso 5).
+				}
+				\\ \hline
+				Paso & 
+				\multicolumn{3}{c|}{
+					Detalle de Curso Aternativo
+				} \\ \hline
+				6 & \multicolumn{3}{p{11cm}|}{
+					Sistema devuelve mensaje indicando que ha ocurrido un error y retorna al menú de Ofertas.
+				} \\ \hline
+				7 & \multicolumn{3}{l|}{
+					Fin.
+				} \\ \hline
 				\end{tabular}
-			}
-			\\ 
-		\hline
-			\multicolumn{4}{|l|}{
-				\begin{tabular}{p{3cm}|p{4in}}
-				Propósito &  Permitir al estudiante postular a una oferta de práctica. 
+			\vspace*{1cm}
+		\end{table}
+
+	\item Caso de Uso CU002 - Mostrar Postulaciones
+		\begin{table}[H]
+			\vspace*{1cm}
+			\begin{tabular}{|c|p{4cm}|c|p{7cm}|}
+				\hline
+					\multicolumn{4}{|l|}{
+						\begin{tabular}{p{3cm}|p{4in}}
+						Actores &  Sistema, Estudiante
+						\end{tabular}
+					}
+					\\ 
+				\hline
+					\multicolumn{4}{|l|}{
+						\begin{tabular}{p{3cm}|p{4in}}
+						Propósito &  Permitir al estudiante mostrar el listado de sus postulaciones. 
+						\end{tabular}
+					}
+					\\
+				\hline
+					\multicolumn{4}{|l|}{
+						\begin{tabular}{p{3cm}|p{4in}}
+							Pre-Condición & \tabitem Usuario logueado correctamente en aplicación. \\
+							& \tabitem Ingresar al módulo de ofertas.
+						\end{tabular}
+					}
+					\\
+				\hline
+					\multicolumn{4}{|l|}{
+						\begin{tabular}{p{3cm}|p{4in}}
+							Post-Condición & El estudiante visualiza listado de postulaciones propias.
+						\end{tabular}
+					}
+					\\
+				\hline
+					\multicolumn{4}{|l|}{
+						\begin{tabular}{p{3cm}|p{4in}}
+							Requerimientos Cubiertos & RF008
+						\end{tabular}
+					}
+					\\
+				\hline
+					\multicolumn{4}{|l|}{
+						Curso Normal de Eventos
+					}
+					\\
+				\hline
+				Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+				1 & Estudiante presiona el botón ``Mis postulaciones''. & 2 & Sistema despliega tabla con el listado de las postulaciones con las siguientes columnas: \\
+				& & & \tabitem Título \\
+				& & & \tabitem Empresa \\ 
+				& & & \tabitem Estado \\ 
+				& & & \tabitem Fecha postulación \\
+				\hline
+				& & 3 & Fin. \\ \hline
+				\multicolumn{4}{|p{15cm}|}{
+					Curso Alternativo: No existen postulaciones para visualizar (Flujo se inicia en paso 1).
+				}
+				\\ \hline
+				Paso & 
+				\multicolumn{3}{c|}{
+					Detalle de Curso Aternativo
+				} \\ \hline
+				2 & \multicolumn{3}{l|}{
+					Sistema despliega mensaje ``No existen postulaciones para mostrar''.
+				} \\ \hline
+				3 & \multicolumn{3}{l|}{
+					Fin.
+				} \\ \hline
 				\end{tabular}
+			\vspace*{1cm}
+		\end{table}
+
+	\item Caso de Uso CU003 - Agregar práctica externa
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores &  Sistema, Estudiante
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito &  Permitir al estudiante ingresar al sistema una práctica propia, para su evaluación.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & \tabitem Usuario logueado correctamente en aplicación. \\
+						& \tabitem Ingresar al módulo de ofertas.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Estudiante ingresa práctica externa al sistema.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF009
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Estudiante presiona el botón ``Crear Práctica Externa''. & 2 & 
+			Sistema muestra formulario a completar con los datos para una práctica que son:
+			\begin{compactitem}
+				\item Título
+				\item Descripción
+				\item Fecha inicio
+				\item Fecha término
+				\item Ubicación
+				\item Tipo de oferta
+				\item Carrera
+				\item Idioma
+				\item Fecha inicio postulación
+				\item Fecha término de la postulación
+			\end{compactitem}
+			\\ \hline
+			3 & Estudiante completa el formulario con los datos a llenar y luego presiona el botón ``Enviar''. & 4 & Sistema internamente realiza validación de campos ingresados como:
+			\begin{compactitem}
+				\item Datos obligatorios no deben venir vacíos.
+				\item Descripción debe tener un mínimo de 10 caracteres.
+			\end{compactitem}
+			\\ \hline
+			& & 5 & Sistema procede a registrar información ingresada devolviendo mensaje de operación exitosa. \\ \hline
+			& & 6 & Fin. \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Sistema detecta error en datos ingresados (Flujo se inicia en paso 4).
 			}
-			\\
-		\hline
-			\multicolumn{4}{|l|}{
-				\begin{tabular}{p{3cm}|p{4in}}
-					Pre-Condición & \tabitem Usuario logueado correctamente en aplicación. \\
-					& \tabitem Ingresar al módulo de ofertas. \\
-					& \tabitem Debe existir una oferta de práctica creada.
-				\end{tabular}
+			\\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			5 & \multicolumn{3}{l|}{
+				Sistema despliega mensaje con los errores de validación.
+			} \\ \hline
+			6 & \multicolumn{3}{l|}{
+				Continúa en paso 3 de flujo normal.
+			} \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Sistema presenta error al registrar información (Flujo se inicia en paso 5).
 			}
-			\\
-		\hline
-			\multicolumn{4}{|l|}{
-				\begin{tabular}{p{3cm}|p{4in}}
-					Post-Condición & El estudiante postula exitosamente a una oferta.
-				\end{tabular}
-			}
-			\\
-		\hline
-			\multicolumn{4}{|l|}{
-				\begin{tabular}{p{3cm}|p{4in}}
-					Requerimientos Cubiertos & RF007
-				\end{tabular}
-			}
-			\\
-		\hline
-			\multicolumn{4}{|l|}{
-				Curso Normal de Eventos
-			}
-			\\
-		\hline
-		Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
-		1 & Estudiante presiona el botón ``Ver detalle'' de una oferta & 2 & Sistema despliega la vista con la información detallada de la oferta. \\ \hline
-		3 & Estudiante presiona botón ``Postular a esta oferta''. & 4 & Sistema muestra modal que permite adjuntar una versión actualizada del currículum del estudiante. \\ \hline
-		5 & Estudiante adjunta curriculum. Luego presiona el botón ``Postular''. & 6 & Sistema devuelve un mensaje indicando que la postulación se realizó correctamente y retorna al menú de Ofertas. \\ \hline
-		& & 7 & Fin. \\ \hline
-		\multicolumn{4}{|l|}{
-			Curso Alternativo: Estudiante no adjunta curriculum (Flujo se inicia en paso 4).
-		}
-		\\ \hline
-		Paso & 
-		\multicolumn{3}{c|}{
-			Detalle de Curso Aternativo
-		} \\ \hline
-		5 & \multicolumn{3}{l|}{
-			Estudiante presiona botón ``Postular''.
-		} \\ \hline
-		6 & \multicolumn{3}{l|}{
-			Continúa en paso 6 de flujo normal.
-		} \\ \hline
-		\multicolumn{4}{|l|}{
-			Curso Alternativo: Sistema falla al realizar postulación (Flujo se inicia en paso 5).
-		}
-		\\ \hline
-		Paso & 
-		\multicolumn{3}{c|}{
-			Detalle de Curso Aternativo
-		} \\ \hline
-		6 & \multicolumn{3}{p{11cm}|}{
-			Sistema devuelve mensaje indicando que ha ocurrido un error y retorna al menú de Ofertas.
-		} \\ \hline
-		7 & \multicolumn{3}{l|}{
-			Fin.
-		} \\ \hline
-		\end{tabular}
-	\vspace*{1cm}
-	\caption{Cuadro descriptivo de opciones frameworks frontend}
-\end{table}
+			\\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			6 & \multicolumn{3}{l|}{
+				Sistema despliega mensaje indicando que hubo error al registrar los datos.
+			} \\ \hline
+			7 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline
+		\end{longtable}
+\end{enumerate}
 
 \subsection{Dise\~{n}o t\'{e}cnico}
 
