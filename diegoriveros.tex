@@ -301,10 +301,10 @@ Finalmente, se opta por la utilización de Ninja Framework, al ser éste un framew
 				\multicolumn{3}{c|}{
 					Detalle de Curso Aternativo
 				} \\ \hline
-				5 & \multicolumn{3}{l|}{
+				5 & \multicolumn{3}{p{12cm}|}{
 					Estudiante presiona botón ``Postular''.
 				} \\ \hline
-				6 & \multicolumn{3}{l|}{
+				6 & \multicolumn{3}{p{12cm}|}{
 					Continúa en paso 6 de flujo normal.
 				} \\ \hline
 				\multicolumn{4}{|l|}{
@@ -315,7 +315,7 @@ Finalmente, se opta por la utilización de Ninja Framework, al ser éste un framew
 				\multicolumn{3}{c|}{
 					Detalle de Curso Aternativo
 				} \\ \hline
-				6 & \multicolumn{3}{p{11cm}|}{
+				6 & \multicolumn{3}{p{12cm}|}{
 					Sistema devuelve mensaje indicando que ha ocurrido un error y retorna al menú de Ofertas.
 				} \\ \hline
 				7 & \multicolumn{3}{l|}{
@@ -392,7 +392,7 @@ Finalmente, se opta por la utilización de Ninja Framework, al ser éste un framew
 				\multicolumn{3}{c|}{
 					Detalle de Curso Aternativo
 				} \\ \hline
-				2 & \multicolumn{3}{l|}{
+				2 & \multicolumn{3}{p{12cm}|}{
 					Sistema despliega mensaje ``No existen postulaciones para mostrar''.
 				} \\ \hline
 				3 & \multicolumn{3}{l|}{
@@ -402,6 +402,7 @@ Finalmente, se opta por la utilización de Ninja Framework, al ser éste un framew
 			\vspace*{1cm}
 		\end{table}
 
+	\clearpage
 	\item Caso de Uso CU003 - Agregar práctica externa
 		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
 			\hline
@@ -481,7 +482,7 @@ Finalmente, se opta por la utilización de Ninja Framework, al ser éste un framew
 			\multicolumn{3}{c|}{
 				Detalle de Curso Aternativo
 			} \\ \hline
-			5 & \multicolumn{3}{l|}{
+			5 & \multicolumn{3}{p{12cm}|}{
 				Sistema despliega mensaje con los errores de validación.
 			} \\ \hline
 			6 & \multicolumn{3}{l|}{
@@ -495,7 +496,7 @@ Finalmente, se opta por la utilización de Ninja Framework, al ser éste un framew
 			\multicolumn{3}{c|}{
 				Detalle de Curso Aternativo
 			} \\ \hline
-			6 & \multicolumn{3}{l|}{
+			6 & \multicolumn{3}{p{12cm}|}{
 				Sistema despliega mensaje indicando que hubo error al registrar los datos.
 			} \\ \hline
 			7 & \multicolumn{3}{l|}{
@@ -503,8 +504,814 @@ Finalmente, se opta por la utilización de Ninja Framework, al ser éste un framew
 			} \\ \hline
 		\end{longtable}
 
+	\clearpage
 	\item Caso de Uso CU004 - Ver detalle oferta
-		
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores &  Sistema, Estudiante, Centro de prácticas, Director de escuela, Empresa
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito &  Permitir al usuario visualizar el detalle de una oferta de práctica.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Usuario logueado correctamente en aplicación.
+							\item Ingresar al módulo de ofertas.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Usuario visualiza detalle de una oferta.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF013
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario presiona el botón ``Ver detalle'' de alguna de las ofertas listadas. & 2 & 
+			Sistema muestra pantalla con el detalle de la oferta seleccionada. Formulario contiene la siguiente información:
+			\begin{compactitem}
+				\item Título
+				\item Nombre empresa
+				\item Fecha inicio
+				\item Descripción
+				\item Check box Cuenta con locomoción (no modificable)
+				\item Check box Remuneración (no modificable)
+			\end{compactitem}
+			Y los botones:
+			\begin{compactitem}
+				\item Postular
+				\item Ver postulantes
+			\end{compactitem}
+			\\ \hline
+			& & 3 & Fin. \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Sistema no tiene ofertas a visualizar (Flujo se inicia en paso 1).
+			}
+			\\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			2 & \multicolumn{3}{p{12cm}|}{
+				Sistema despliega mensaje indicando que no existen ofertas para visualizar.
+			} \\ \hline
+			3 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline
+		\end{longtable}
+
+	\clearpage
+	\item Caso de Uso CU005 - Ver postulantes de oferta
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores &  Sistema, Centro de prácticas, Director de escuela, Empresa
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito &  Permitir al usuario ver el listado de los postulantes de una oferta
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Usuario logueado correctamente en aplicación.
+							\item Ingresar al módulo de ofertas.
+							\item Ingresar a la opción ``Ver detalle oferta''.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Usuario visualiza el listado de postulantes de una oferta.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF005
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario presiona el botón ``Ver postulantes''. & 2 & 
+			Sistema muestra listado de los postulantes en una tabla con las siguientes columnas:
+			\begin{compactitem}
+				\item Nombre
+				\item Apellido
+				\item Carrera
+				\item Numero de matr\'{i}cula
+				\item Fecha postulación
+				\item Aprobado por empresa
+			\end{compactitem}
+			Y la opci\'{o}n:
+			\begin{compactitem}
+				\item Seleccionar como candidato
+			\end{compactitem}
+			Y los botones:
+			\begin{compactitem}
+				\item Modificar selección
+				\item Cancelar
+			\end{compactitem}
+			\\ \hline
+			& & 3 & Fin. \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: No existen postulantes para esta oferta (Flujo se inicia en paso 1).
+			}
+			\\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			2 & \multicolumn{3}{p{12cm}|}{
+				Sistema despliega mensaje indicando que no existen postulantes para la oferta.
+			} \\ \hline
+			3 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline
+		\end{longtable}
+
+	\clearpage
+	\item Caso de Uso CU007 - Asignar Candidato
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores & Sistema, Centro de prácticas, Director de escuela, Empresa
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito & Permitir al usuario escoger dentro de los candidatos seleccionados, al estudiante definitivo que se adjudicará la práctica.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Usuario logueado correctamente en aplicación.
+							\item Ingresar al módulo de ofertas.
+							\item Ingresar a la opción ``Ver detalle oferta''.
+							\item Ingresar a la opción ``Ver postulantes''.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Establecer al alumno finalista para el proceso de práctica.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF016
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario presiona el link ``Asignar candidato'' para algún candidato. & 2 & 
+			Sistema asigna candidato como finalista del proceso. \\ \hline
+			& & 3 & Sistema notifica al centro de prácticas que candidato final ha sido seleccionado. \\ \hline
+			& & 4 & Fin. \\ \hline
+		\end{longtable}
+
+	\clearpage
+	\item Caso de Uso CU006 - Seleccionar Candidato
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores & Sistema, Centro de prácticas, Director de escuela
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito & Permitir al usuario seleccionar estudiantes como candidatos para una oferta de trabajo práctico.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Usuario logueado correctamente en aplicación.
+							\item Ingresar al módulo de ofertas.
+							\item Ingresar a la opción ``Ver detalle oferta''.
+							\item Ingresar a la opción ``Ver postulantes''.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Candidatos seleccionados para una oferta de trabajo práctico.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF025
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario presiona el switch de ``Seleccionar candidato'' para algún alumno que aparece en el listado. & 2 & 
+			Sistema marca al alumno como candidato. \\ \hline
+			3 & Usuario presiona el botón ``Guardar cambios''. & 4 & Sistema aplica los cambios y los persiste en la base de datos. \\ \hline
+			& & 5 & Fin. \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Sistema presenta error al registrar información (Flujo se inicia en paso 3).
+			}
+			\\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			4 & \multicolumn{3}{l|}{
+				Sistema despliega mensaje indicando que hubo error al registrar los datos.
+			} \\ \hline
+			5 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline
+		\end{longtable}
+	
+	\item Caso de Uso CU008 - Cerrar Proceso
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores & Sistema, Centro de prácticas, Director de escuela
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito & Permitir al usuario cerrar el proceso de selección asignando un estudiante a la práctica.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Usuario logueado correctamente en aplicación.
+							\item Ingresar al módulo de ofertas.
+							\item Ingresar a la opción ``Ver detalle oferta''.
+							\item Ingresar a la opción ``Ver postulantes''.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Adjudicación de práctica a alumno y finalización de proceso de oferta.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF016
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario presiona el botón ``Cerrar Proceso''. & 2 & Sistema asigna el trabajo práctico al alumno previamente seleccionado. \\ \hline
+			& & 3 & Sistema notifica al alumno y a la empresa que dicho alumno se ha adjudicado el trabajo práctico. \\ \hline
+			& & 4 & Fin. \\ \hline
+		\end{longtable}
+
+	\clearpage
+	\item Caso de Uso CU009 - Aprobar práctica externa
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores & Sistema, Centro de prácticas, Director de escuela
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito & Permitir al usuario aprobar una práctica presentada por el estudiante de forma externa.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Usuario logueado correctamente en aplicación.
+							\item Ingresar al módulo de ofertas.
+							\item Ingresar a ``Ver detalle'' de la oferta presentada por estudiante.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Práctica externa aprobada.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF010
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario presiona el botón ``Aprobar esta oferta''. & 2 & Sistema asigna práctica a estudiante y muestra mensaje indicando que la operación se ha realizado correctamente. \\ \hline
+			& & 3 & Sistema envía una notificación por correo electrónico al estudiante informando que se ha aprobado la práctica. \\ \hline
+			& & 4 & Fin. \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Sistema presenta error al registrar operación (Flujo se inicia en paso 2).
+			}
+			\\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			3 & \multicolumn{3}{p{12cm}|}{
+				Sistema despliega mensaje indicando que hubo error al registrar la operación.
+			} \\ \hline
+			4 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline
+		\end{longtable}
+
+	\clearpage
+		\item Caso de Uso CU010 - Ver Bitácora
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores & Sistema, Centro de prácticas, Director de escuela, Estudiante, Empresa
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito & Permitir al usuario ver la bitácora de una práctica.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Usuario logueado correctamente en aplicación.
+							\item Ingresar al módulo de prácticas.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Bitácora es presentada al usuario.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF018
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario presiona el botón ``Ver bitácora'' en alguna de las prácticas listadas. & 2 & Sistema muestra bitácora de práctica con sus todos sus registros. \\ \hline
+			& & 3 & Fin. \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Bitácora se encuentra vacía (Flujo se inicia en paso 2)
+			}
+			\\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			3 & \multicolumn{3}{p{12cm}|}{
+				Sistema muestra mensaje indicando que no existen entradas para esta bitácora.
+			} \\ \hline
+			4 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline
+		\end{longtable}
+
+
+	\clearpage
+		\item Caso de Uso CU011 - Ingresar entrada Bitácora
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores & Sistema, Estudiante
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito & Permitir al usuario agregar una entrada a la bitácora.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Usuario logueado correctamente en aplicación.
+							\item Ingresar al módulo de prácticas.
+							\item Ingresar a la bitácora.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Se agrega exitosamente una entrada a la bitácora.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF026
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario presiona botón ``Agregar entrada''. & 2 & Sistema despliega formulario para la nueva entrada. \\ \hline
+			3 & Usuario completa formulario ingresando la información en el recuadro de texto. & 4 & Sistema persiste los datos en el servidor. Se refresca la bitácora y se muestra mensaje indicando que la entrada se ingresó correctamente. \\ \hline
+			& & 5 & Fin. \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Error al guardar la entrada en bitácora (Flujo se inicia en paso 3).
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			4 & \multicolumn{3}{p{12cm}|}{
+				Sistema muestra mensaje indicando que ocurrió un error al agregar la entrada a la bitácora.
+			} \\ \hline
+			5 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline
+		\end{longtable}
+
+	\clearpage
+		\item Caso de Uso CU012 - Evaluar estudiante
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores & Sistema, Empresa
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito & Permitir a la empresa evaluar práctica realizada por algún alumno.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Haber ejecutado el Caso de Uso CU010 - Ver Bitácora.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Trabajo práctico (del alumno) evaluado.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF017
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario presiona botón ``Evaluar estudiante''. & 2 & Sistema muestra página para la evaluación del estudiante, la cual posee 2 opciones:
+			\begin{compactitem}
+				\item Descargar formulario en pdf.
+				\item Evaluar en formulario google. 
+			\end{compactitem}\\ \hline
+			3 & Usuario selecciona la opción ``Descargar pdf''. \\ \hline
+			4 & Usuario completa archivo pdf y procede a adjuntarlo a sistema presionando botón ``Subir''. & 5 & Sistema retorna mensaje indicando que la evaluación se ha adjuntado correctamente. \\ \hline
+			& & 6 & Fin. \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Usuario escoge evaluar mediante formulario google (Flujo se inicia en paso 3).
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			4 & \multicolumn{3}{p{12cm}|}{
+				Usuario presiona link para evaluar a través de formulario google.
+			} \\ \hline
+			5 & \multicolumn{3}{l|}{
+				Usuario completa formulario.
+			} \\ \hline
+			6 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Error al adjuntar archivo pdf (Flujo se inicia en paso 4).
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			5 & \multicolumn{3}{p{12cm}|}{
+				Sistema muestra mensaje indicando que ocurrió un error al adjuntar archivo pdf.
+			} \\ \hline
+			6 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline
+		\end{longtable}
+
+	\clearpage
+		\item Caso de Uso CU013 - Ver evaluación
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores & Sistema, Empresa, Centro de prácticas, Director de escuela
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito & Permitir al usuario visualizar la evaluación de un estudiante.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Haber ejecutado el Caso de Uso CU010 - Ver Bitácora.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Se visualiza la evaluación de un estudiante.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF019
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario presiona botón ``Ver evaluación''. & 2 & Sistema muestra página con link para descargar archivo pdf con la evaluación \\ \hline
+			& & 3 & Fin. \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: No existe evaluación (Flujo se inicia en paso 1).
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			2 & \multicolumn{3}{p{12cm}|}{
+				Sistema muestra mensaje indicando que no existen evaluaciones a visualizar.
+			} \\ \hline
+			3 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline
+		\end{longtable}
+
+	\clearpage
+		\item Caso de Uso CU014 - Crear Oferta
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores & Sistema, Empresa, Centro de prácticas
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito & Permitir al usuario crear una oferta de trabajo práctico.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Haber ingresado al sistema.
+							\item Ingresar al menú de Ofertas.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Oferta de trabajo práctico creada.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF011
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario presiona botón ``Nueva Oferta''. & 2 & Sistema muestra formulario con datos a ingresar para nueva oferta:
+			\begin{compactitem}
+				\item Título
+				\item Descripción
+				\item Fecha inicio
+				\item Fecha término
+				\item Carrera
+				\item Idioma
+				\item Locomoción
+				\item Remuneración
+				\item Casino
+				\item Ubicación
+				\item Área de trabajo
+				\item Cargo
+				\item Nivel de estudios
+			\end{compactitem} \\ \hline
+			3 & Estudiante completa el formulario con los datos a llenar y luego presiona el botón ``Enviar''. & 4 & Sistema internamente realiza validación de campos ingresados como:
+			\begin{compactitem}
+			 	\item Datos obligatorios no deben venir vacíos.
+			 	\item Descripción debe tener un mínimo de 10 caracteres.
+			\end{compactitem} \\ \hline
+			& & 5 & Sistema procede a registrar información ingresada devolviendo mensaje de operación exitosa. \\ \hline
+			& & 6 & Fin. \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Sistema detecta error en datos ingresados (Flujo se inicia en paso 4).
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			5 & \multicolumn{3}{p{12cm}|}{
+				Sistema despliega mensaje con los errores de validación.
+			} \\ \hline
+			6 & \multicolumn{3}{l|}{
+				Continúa en paso 3 de flujo normal.
+			} \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Sistema presenta error al registrar información (Flujo se inicia en paso 5).
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			6 & \multicolumn{3}{p{12cm}|}{
+				Sistema despliega mensaje indicando que hubo error al registrar los datos.
+			} \\ \hline
+			7 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline
+		\end{longtable}
 \end{enumerate}
 
 \subsection{Dise\~{n}o t\'{e}cnico}
