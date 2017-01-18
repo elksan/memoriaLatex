@@ -1392,7 +1392,298 @@ Finalmente, se opta por la utilización de Ninja Framework, al ser éste un framew
 				Fin.
 			} \\ \hline
 		\end{longtable}
+
+\clearpage
+		\item Caso de Uso CU024.3 - Eliminar carrera
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores & Sistema, Centro Prácticas
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito & Poder eliminar una carrera del sistema.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Haber ingresado al sistema.
+							\item Estar en el menú de administración.
+							\item Debe existir una carrera.	
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Carrera es eliminada.
+
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF038
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario presiona botón ``Eliminar'' en recuadro de carrera. & 2 & SSistema muestra diálogo de confirmación de la acción con los botones:
+				\begin{compactitem}
+					\item Aceptar.
+					\item Cancelar
+				\end{compactitem} \\ \hline
+			3 & Usuario presiona botón ``Aceptar''. & 4 & Sistema elimina la carrera y muestra mensaje de que la operación se ha realizado exitosamente. 
+			& & 5 & Fin. \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Usuario cancela operación (Flujo se inicia en paso 2)
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			3 & \multicolumn{3}{p{12cm}|}{
+				Usuario presiona botón “Cancelar”.
+			} \\ \hline
+			4 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline	
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Sistema presenta error al registrar información (Flujo se inicia en paso 3)
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			4 & \multicolumn{3}{p{12cm}|}{
+				Sistema despliega mensaje indicando que hubo error al registrar los datos.
+			} \\ \hline
+			5 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline	
+						
+			\end{longtable}
 		
+		
+		
+
+
+
+		
+	\clearpage
+		\item Caso de Uso CU025 - Gestionar prácticas
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores & Sistema, Centro Prácticas, Estudiante, Empresa, Director de Escuela
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito & Contar con un módulo para la gestión de prácticas dentro del sistema.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Haber ingresado al sistema.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Usuario es dirigido a módulo de prácticas.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF039
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario presiona botón ``Prácticas'' en el menú superior. & 2 & Sistema muestra pantalla del módulo de prácticas con el listado de las prácticas que el usuario posee. \\ \hline
+			& & 3 & Fin. \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Flujo Empresa, Centro prácticas, Director escuela (Flujo se inicia en paso 4).
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			5 & \multicolumn{3}{p{12cm}|}{
+				Usuario accede nuevamente a la oferta.
+			} \\ \hline
+			6 & \multicolumn{3}{p{12cm}|}{
+				Sistema muestra botón ``Ver postulaciones''.
+			} \\ \hline
+			7 & \multicolumn{3}{p{12cm}|}{
+				Se muestran las postulaciones para dicha oferta.
+			} \\ \hline
+			8 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline	
+			\end{longtable}
+		
+		
+		\clearpage
+		\item Caso de Uso CU026 - Gestionar postulaciones
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores & Sistema, Centro Prácticas, Estudiante, Empresa, Director de Escuela
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito & Contar con un módulo encargado del proceso de postulaciones.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Haber ingresado al sistema.
+							\item Acceder al módulo de ofertas.
+							\item Debe existir una oferta.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Usuario puede revisar flujo de postulaciones.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF042
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario estudiante selecciona una oferta de las desplegadas en pantalla. & 2 & Sistema muestra oferta con opción ``Postular a esta oferta'' \\ \hline
+			3 & Estudiante presiona botón ``Postular a esta oferta''. & 4 & Sistema retorna al menú de ofertas. \\ \hline
+			5 & Estudiante revisa su postulación en botón ``Mis postulaciones''. & 6 & Sistema muestra listado de las postulaciones realizadas por el estudiante. \\ \hline
+			& & 7 & Fin. \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Flujo Empresa, Centro prácticas, Director escuela (Flujo se inicia en paso 4).
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			5 & \multicolumn{3}{p{12cm}|}{
+				Usuario accede nuevamente a la oferta.
+			} \\ \hline
+			6 & \multicolumn{3}{p{12cm}|}{
+				Sistema muestra botón ``Ver postulaciones''.
+			} \\ \hline
+			7 & \multicolumn{3}{p{12cm}|}{
+				Se muestran las postulaciones para dicha oferta.
+			} \\ \hline
+			8 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline	
+			\end{longtable}
+		
+		\clearpage
+		\item Caso de Uso CU027 - Gestionar ofertas
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores & Sistema, Centro Prácticas, Estudiante, Empresa, Director de Escuela
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito & Contar con un módulo para la gestión de ofertas dentro del sistema.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Haber ingresado al sistema.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Usuario es dirigido a módulo de ofertas.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF040
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario presiona el botón ``Ofertas'' en el menú superior. & 2 & Sistema muestra pantalla del módulo de ofertas con el listado de las ofertas dependiendo del rol del usuario.
+			& & 3 & Fin. \\ \hline
+			\end{longtable}
 			\clearpage
 		\item Caso de Uso CU028 - Administrar sistema
 		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
