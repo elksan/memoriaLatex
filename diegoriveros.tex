@@ -1312,6 +1312,86 @@ Finalmente, se opta por la utilización de Ninja Framework, al ser éste un framew
 				Fin.
 			} \\ \hline
 		\end{longtable}
+
+	\clearpage
+		\item Caso de Uso CU015 - Aprobar Oferta
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores & Sistema, Empresa
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito & Enviar versión definitiva de oferta al centro de prácticas.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Haber ingresado al sistema.
+							\item Ingresar al menú de Ofertas.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Oferta queda disponible para la cuenta del centro de prácticas.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF027
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario ingresa a opción ``Ver detalle de oferta''. & & \\ \hline
+			2 & Usuario presiona botón ``Aprobar esta oferta''. & 3 & Sistema muestra mensaje indicando que la operación se ha realizado con éxito. \\ \hline
+			& & 4 & Fin. \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Oferta ya se encuentra aprobada (Flujo se inicia en paso 1).
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			2 & \multicolumn{3}{p{12cm}|}{
+				Sistema muestra botón deshabilitado con mensaje ``Oferta ya ha sido aprobada''.
+			} \\ \hline
+			3 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Sistema presenta error al registrar información (Flujo se inicia en paso 2).
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			3 & \multicolumn{3}{p{12cm}|}{
+				Sistema despliega mensaje indicando ocurrió un error en procesar la operación.
+			} \\ \hline
+			4 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline
+		\end{longtable}
 \end{enumerate}
 
 \subsection{Dise\~{n}o t\'{e}cnico}
