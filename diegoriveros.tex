@@ -1392,7 +1392,190 @@ Finalmente, se opta por la utilización de Ninja Framework, al ser éste un framew
 				Fin.
 			} \\ \hline
 		\end{longtable}
+\clearpage
+		\item Caso de Uso CU024.2 - Editar carrera
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores & Sistema, Centro Prácticas
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito & Poder modificar los datos de una carrera.
 
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Haber ingresado al sistema.
+							\item Estar en el menú de administración.
+							\item Debe existir una carrera.	
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Información de carrera es modificada.
+
+
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF037		
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario presiona botón ``Editar'' en recuadro de carrera. & 2 & Sistema muestra formulario con los campos a modificar para una carrera:
+				\begin{compactitem}
+					\item Nombre
+					\item Código
+				\end{compactitem} \\ \hline
+			3 & Usuario completa datos y presiona botón``Enviar''.& 4 & Sistema valida los datos ingresados.\\ \hline
+ 			& & 5 & Fin. \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Sistema detecta error en datos ingresados (Flujo se inicia en paso 4)
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			5 & \multicolumn{3}{p{12cm}|}{
+				Sistema despliega mensaje con los errores de validación.
+			} \\ \hline
+			6 & \multicolumn{3}{l|}{
+				Continúa en paso 3 de flujo normal.
+			} \\ \hline	
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Sistema presenta error al registrar información (Flujo se inicia en paso 5)
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			6 & \multicolumn{3}{p{12cm}|}{
+				Sistema despliega mensaje indicando que hubo error al registrar los datos.
+			} \\ \hline
+			7 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline	
+						
+			\end{longtable}		
+
+%% caso de uso 24.2
+
+\clearpage
+		\item Caso de Uso CU024.2 - Editar carrera
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores & Sistema, Centro Prácticas
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito & Poder modificar los datos de una carrera.
+
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Haber ingresado al sistema.
+							\item Estar en el menú de administración.
+							\item Debe existir una carrera.	
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Información de carrera es modificada.
+
+
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF037		
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario presiona botón ``Editar'' en recuadro de carrera. & 2 & Sistema muestra formulario con los campos a modificar para una carrera:
+				\begin{compactitem}
+					\item Nombre
+					\item Código
+				\end{compactitem} \\ \hline
+			3 & Usuario completa datos y presiona botón``Enviar''.& 4 & Sistema valida los datos ingresados.\\ \hline
+ 			& & 5 & Fin. \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Sistema detecta error en datos ingresados (Flujo se inicia en paso 4)
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			5 & \multicolumn{3}{p{12cm}|}{
+				Sistema despliega mensaje con los errores de validación.
+			} \\ \hline
+			6 & \multicolumn{3}{l|}{
+				Continúa en paso 3 de flujo normal.
+			} \\ \hline	
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Sistema presenta error al registrar información (Flujo se inicia en paso 5)
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			6 & \multicolumn{3}{p{12cm}|}{
+				Sistema despliega mensaje indicando que hubo error al registrar los datos.
+			} \\ \hline
+			7 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline	
+						
+			\end{longtable}		
+		
+%%Fin CU 24.2
+
+%% Caso de uso 24.3		
+		
 \clearpage
 		\item Caso de Uso CU024.3 - Eliminar carrera
 		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
@@ -1446,7 +1629,7 @@ Finalmente, se opta por la utilización de Ninja Framework, al ser éste un framew
 			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
 			1 & Usuario presiona botón ``Eliminar'' en recuadro de carrera. & 2 & Sistema muestra diálogo de confirmación de la acción con los botones:
 				\begin{compactitem}
-					\item Aceptar.
+					\item Aceptar
 					\item Cancelar
 				\end{compactitem} \\ \hline
 			3 & Usuario presiona botón ``Aceptar''. & 4 & Sistema elimina la carrera y muestra mensaje de que la operación se ha realizado exitosamente.\\ \hline& & 5 & Fin. \\ \hline
@@ -1478,13 +1661,240 @@ Finalmente, se opta por la utilización de Ninja Framework, al ser éste un framew
 			} \\ \hline	
 						
 			\end{longtable}
+			
+			
+%% caso de uso 23.3 
+
+	\clearpage
+		\item Caso de Uso CU023.3 - Visualizar director de escuela
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores & Sistema, Centro Prácticas
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito & Poder visualizar perfil de un director de escuela.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Haber ingresado al sistema.
+							\item Estar en el menú de administración.
+							\item Debe existir un director de escuela.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Ver detalle de un director de escuela.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF035
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario presiona opción ``Ver Perfil'' en recuadro de director de escuela.& 2 & Sistema muestra en pantalla el perfil del director de escuela con su detalle:
+				\begin{compactitem}
+					\item Nombre
+					\item Teléfono
+					\item Correo
+					\item Carrera
+				\end{compactitem} \\ \hline
+			& 3 & Fin. \\ \hline
+\end{longtable}	
+			
 		
-		
-		
+%%caso de uso 24
+
+\clearpage
+		\item Caso de Uso CU024 - Mantenedor Carrera		
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores & Sistema, Centro Prácticas
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito & Poder mantener las carreras de la universidad en el sistema (operaciones: Crear; Modificar y Eiminar carrera).
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Haber ingresado al sistema.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Realización de alguna de las operaciones que el mantenedor posee.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF036 RF037 RF038
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario ejecuta exitosamente “Caso de uso 24.1 - Crear Carrera”.
+ ``Administración''.& 2 & Sistema retorna al menú de Administración.
+			3 & Usuario completa datos y presiona botón “Enviar”.\\ \hline
+			& 4 & Sistema retorna al menú de Administración.\\ \hline
+			5 & Sistema persiste carrera en base de datos y retorna mensaje de operación realizada con éxito.\\ \hline
+			& 7 & Fin. \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo:  Usuario ejecuta Caso de Uso 21.3 - Modificar Carrera (Flujo se inicia en paso 2)
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			3 & \multicolumn{3}{p{12cm}|}{
+				Continúa en paso 4 de flujo normal.
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Usuario ejecuta Caso de Uso 21.4 - Visualizar Carrera(Flujo se inicia en paso 2)
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			3 & \multicolumn{3}{p{12cm}|}{
+				Continúa en paso 4 de flujo normal.
+			} \\ \hline
+		\end{longtable}	
+			
+	
+%% caso de uso 24.1
+
+\clearpage
+		\item Caso de Uso CU024.1 - Crear carrera		
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores & Sistema, Centro Prácticas
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito & Poder agregar una carrera al sistema.
 
 
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Haber ingresado al sistema.
+							\item Estar en el menú de administración.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Carrera es agregada al sistema.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF036			
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario presiona botón del menú flotante ``Nueva Carrera''. & 2 & Sistema muestra formulario con los campos a completar para una carrera:
+				\begin{compactitem}
+					\item Nombre
+					\item Código
+				\end{compactitem} \\ \hline
+			3 & Usuario completa datos y presiona botón``Enviar''.& 4 & Sistema valida los datos ingresados. \\ \hline
+			5 & Sistema persiste carrera en base de datos y retorna mensaje de operación realizada con éxito.
+			& & 6 & Fin. \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Sistema detecta error en datos ingresados (Flujo se inicia en paso 4)
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			5 & \multicolumn{3}{p{12cm}|}{
+				Sistema despliega mensaje con los errores de validación.
+			} \\ \hline
+			6 & \multicolumn{3}{l|}{
+				Continúa en paso 3 de flujo normal.
+			} \\ \hline	
+				\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Sistema presenta error al registrar información (Flujo se inicia en paso 5)
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			6 & \multicolumn{3}{p{12cm}|}{
+				Sistema despliega mensaje indicando que hubo error al registrar los datos.
+			} \\ \hline
+			7 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline	
+		\end{longtable}		
+	
+%%Caso de uso 25
 
-		
 	\clearpage
 		\item Caso de Uso CU025 - Gestionar prácticas
 		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
