@@ -1912,7 +1912,7 @@ Finalmente, se opta por la utilización de Ninja Framework, al ser éste un framew
 				\item Sitio web
 				\item Teléfono
 			\end{compactitem} \\ \hline
-			3 & Usuario completa datos y presiona botón “Enviar”. & 4 & Sistema valida los datos ingresados. \\ \hline
+			3 & Usuario completa datos y presiona botón ``Enviar''. & 4 & Sistema valida los datos ingresados. \\ \hline
 			& & 5 & Sistema persiste empresa en base de datos y retorna mensaje de operación realizada con éxito. \\ \hline
 			& & 6 & Fin. \\ \hline 
 			\multicolumn{4}{|p{15cm}|}{
@@ -1997,7 +1997,7 @@ Finalmente, se opta por la utilización de Ninja Framework, al ser éste un framew
 				\\
 			\hline
 			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
-			1 & Usuario presiona opción ``Activar/Desactivar'' en recuadro de empresa.& 2 & Sistema Desactiva empresa exitosamente.
+			1 & Usuario presiona opción ``Activar/Desactivar'' en recuadro de empresa.& 2 & Sistema Desactiva empresa exitosamente. \\ \hline
 			& & 3 & Fin. \\ \hline 
 			\multicolumn{4}{|p{15cm}|}{
 				Curso Alternativo: Usuario desea Activar empresa desactivada (Flujo se inicia en paso 1)
@@ -2092,7 +2092,7 @@ Finalmente, se opta por la utilización de Ninja Framework, al ser éste un framew
 				\item Sitio web
 				\item Teléfono
 			\end{compactitem} \\ \hline
-			3 & Usuario completa datos y presiona botón ``Enviar''.& 4 & Sistema valida los datos ingresados.
+			3 & Usuario completa datos y presiona botón ``Enviar''.& 4 & Sistema valida los datos ingresados. \\ \hline
 			& & 5 & Sistema persiste cambios en los datos de la empresa en base de datos y retorna mensaje de operación realizada con éxito. \\ \hline 
 			& & 6 & Fin. \\ \hline
 			\multicolumn{4}{|p{15cm}|}{
@@ -2248,7 +2248,7 @@ Finalmente, se opta por la utilización de Ninja Framework, al ser éste un framew
 				\item Modificar
 				\item Visualizar
 			\end{compactitem} \\ \hline
-			3 & Usuario ejecuta exitosamente “Caso de uso 22.1 - Crear Estudiante”. & 4 & Sistema retorna al menú de Administración.  \\ \hline
+			3 & Usuario ejecuta exitosamente ``Caso de uso 22.1 - Crear Estudiante''. & 4 & Sistema retorna al menú de Administración.  \\ \hline
 			& & 5 & Fin. \\ \hline
 		\end{longtable}	
 
@@ -2460,7 +2460,7 @@ Finalmente, se opta por la utilización de Ninja Framework, al ser éste un framew
 					\item Código
 				\end{compactitem} \\ \hline
 			3 & Usuario completa datos y presiona botón``Enviar''.& 4 & Sistema valida los datos ingresados. \\ \hline
-			5 & Sistema persiste carrera en base de datos y retorna mensaje de operación realizada con éxito. & \\ \hline
+			& & 5 & Sistema persiste carrera en base de datos y retorna mensaje de operación realizada con éxito. \\ \hline
 			& & 6 & Fin. \\ \hline
 			\multicolumn{4}{|p{15cm}|}{
 				Curso Alternativo: Sistema detecta error en datos ingresados (Flujo se inicia en paso 4)
@@ -2937,6 +2937,15 @@ Finalmente, se opta por la utilización de Ninja Framework, al ser éste un framew
 \end{enumerate}
 
 \subsection{Dise\~{n}o t\'{e}cnico}
+
+\subsubsection{Diagrama de clases}
+\begin{figure}[H]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{memoriaIdea.png}
+	\vspace*{1cm}
+	\caption{Diagrama de clases de la Aplicaci\'{o}n}
+\end{figure}
+
 
 \subsection{Gesti\'{o}n de perfiles}
 Para solventar el correcto comportamiento de la aplicación, se han establecido una serie de perfiles de usuario, los cuales cuentan con distintos privilegios dependiendo del nivel de acceso  a la información que se requiera y otorgue.
