@@ -150,6 +150,145 @@ Para el desarrollo del prototipo, se define como estrategia dividir al curso com
 A modo de antecedente, se indica que el desarrollo del sistema comienza en Marzo del año 2014, por los propios estudiantes.
 \\
 
+\section{Desarrollo de aplicaciones web}
+
+\subsection{Cliente - Servidor}
+La arquitectura cliente servidor es altamente usada en el diseño de aplicaciones web. Algunos protocolos estandarizados de comunicación cliente servidor son los siguientes:
+\begin{itemize}
+	\item FTP
+	\item SMTP
+	\item HTTP
+\end{itemize}
+
+Un sistema cliente servidor también puede ser definido como una arquitectura de software. Esta se basa en clientes y el servidor, los primeros son los realizadores de peticiones y el servidor es el encargado de responder a dichas peticiones. La arquitectura cliente servidor provee comunicación entre procesos ya que esta establece el intercambio de datos de ambas partes y cada una realiza diferentes funciones.
+
+Beneficios de arquitectura cliente-servidor:
+\begin{enumerate}
+	\item Separa el procesamiento de la aplicación a través de múltiples máquinas.
+	\item Reduce la replicación de datos ya que estos se almacenan en el servidor y no en cada cliente.
+	\item Permite el intercambio de recursos entre los clientes y el servidor.
+\end{enumerate}
+
+\begin{figure}[H]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{ARQ_CLIENTE_SERVIDOR.png}
+	\vspace*{1cm}
+	\caption{Arquitectura cliente servidor}
+\end{figure}
+
+\subsection{Modelo de capas}
+La arquitectura de capas se compone de los siguientes elementos:
+\begin{itemize}
+	\item Presentación
+	\item Lógica de Negocio
+	\item Datos	
+\end{itemize}
+
+El objetivo de una arquitectura de N capas es intentar desacoplar estos componentes. 
+
+La más usada es la arquitectura de 3 capas la cual separa los componentes mencionados anteriormente como capas. La ventaja de este modelo es que deja estas capas desacopladas entre sí, dando la opción de que potencialmente cada componente puede estar alojado en una máquina diferente.
+
+Principios de esta arquitectura:
+\begin{itemize}
+	\item Está basado en la arquitectura cliente servidor.
+	\item Cada capa debe ser independiente y no debe exponer dependencias relacionadas con la implementación.
+	\item Las capas que no están conectadas no se deben comunicar entre sí.
+	\item Los cambios en la plataforma solo impactan a la capa que está corriendo en la plataforma afectada.
+\end{itemize}
+
+Descripción de las capas:
+\begin{itemize}
+	\item Capa de presentación: \\
+	Se ubica en el primer nivel la aplicación. Esta corresponde a la interfaz de usuario. Su principal función es traducir los datos en algo que el usuario pueda entender.
+	\item Capa de lógica/ negocio: \\
+	Su función es coordinar la aplicación, sus comandos y tomar decisiones lógicas, realizar cálculos. Además se encarga de mover los datos entre las otras dos capas.
+	\item Capa de datos: \\
+	Esta capa es la responsable de almacenar y consultar los datos desde una base de datos o sistema de archivos. Posteriormente, estos datos son enviados a la capa de lógica para su procesamiento y eventualmente ser presentados al usuario. 
+\end{itemize}
+
+\subsection{Modelo - Vista - Controlador (MVC)}
+Modelo vista controlador se crea como solución para separar el núcleo del sistema de la presentación y la lógica de control que usa estas funcionalidades
+
+Los componentes tienen las siguientes funcionalidades:
+Modelo:
+\begin{itemize}
+	\item Maneja el comportamiento los datos de la aplicación.
+	\item Responde a peticiones por información, usualmente de la vista.
+	\item Sigue instrucciones para cambiar estados (generalmente desde el controlador).
+\end{itemize}
+Vista: 
+\begin{itemize}
+	\item Traduce el modelo a una mejor manera de interacción para el usuario. Múltiples vistas pueden estar basadas sobre el mismo modelo, para diferentes propósitos.
+	\item No hace procesamiento de datos.
+\end{itemize}
+
+Controlador:
+\begin{itemize}
+	\item Recibe una petición del usuario y se encarga de hacer las llamadas al modelo para luego enviar una respuesta a dicha petición. Es el encargado de decirle al modelo que datos se deben obtener para presentarla al usuario.
+	\item Acepta entradas desde el usuario y en virtud de esto, solicita al modelo y a la vista realizar acciones basadas en la entrada.
+\end{itemize}
+
+\subsubsection{MVC en aplicación web:}
+El patrón MVC en una aplicación web se compone de las siguientes tecnologías:
+Modelo:
+\begin{itemize}
+	\item Tablas de la base de datos
+	\item Información de session
+	\item Reglas de las transacciones
+\end{itemize}
+Vista:
+\begin{itemize}
+	\item HTML
+	\item Hojas de estilo CSS
+	\item Plantillas del lado del servidor
+\end{itemize}
+Controlador:
+\begin{itemize}
+	\item Scripts del lado del cliente
+	\item Procesamientos de peticiones http
+	\item Preprocesamiento de los datos
+\end{itemize}
+
+\subsubsection{Ventajas de MVC:}
+\begin{itemize}
+	\item Métodos del modelo ofrecen una API para los datos y estados.
+	\item Facilita el diseño de la vista y el controlador.
+	\item Cualquiera de los componentes puede ser reemplazado fácilmente.
+	\item Muchas vistas pueden ser creadas para representar los datos de diferentes maneras.
+	\item Cada vista usa la misma API del modelo.
+	\item Fácil de construir y mantener.
+\end{itemize}
+
+\begin{figure}[H]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{mvc.png}
+	\vspace*{1cm}
+	\caption{Diagrama Modelo-Vista-Controlador}
+\end{figure}
+
+\subsection{Web responsiva}
+El diseño web responsivo o adaptativo es una técnica de diseño web que busca la correcta visualización de una misma página en distintos dispositivos, ya sean computadores de escritorio a tablets y móviles. Es por esto que hoy en día es necesario que cualquier aplicación web se adapte a los diferentes tamaños de los mismos.
+
+\subsubsection{En qué consiste el diseño responsivo}
+Se trata de redimensionar y colocar los elementos de la web de forma que se adapten al ancho de cada dispositivo permitiendo una correcta visualización y una mejor experiencia de usuario. Se caracteriza porque los layouts (contenidos) e imágenes son fluidos y se usa código media-queries de CSS3.
+
+\begin{figure}[H]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{RESPONSIVIDAD3.png}
+	\vspace*{1cm}
+	\caption{Caracter\'{i}sticas del diseño responsivo}
+\end{figure}
+
+Se basa en proporcionar a todos los usuarios de una web los mismos contenidos y una experiencia de usuario lo más similar posible, frente a otras aproximaciones al desarrollo web móvil como la creación de apps, el cambio de dominio o webs servidas dinámicamente en función del dispositivo.
+
+En definitiva, el diseño web responsiva se consolida como una de las mejores prácticas hoy en día en diseño web. Aunque como todas, tiene sus pros y contras, la web responsiva es considerada actualmente como la mejor práctica posible en el diseño web.
+
+
+\section{Resumen del Capítulo}
+En el segundo capítulo presentado, se expone el marco teórico en el que se basa el desarrollo de esta aplicación. 
+En primer lugar, se define el contexto en el que el sistema PRACUTAL fue concebido, indicando su propósito y parte de su historia inicial. Posteriormente, se mencionan detalles del desarrollo de aplicaciones web, poniendo énfasis en definir conceptos relacionados con: Arquitectura Cliente-Servidor; Modelo de capas; Modelo Vista-Controlador y finalmente, explicando concepto y objetivos de una web responsiva, todo lo anterior, para clarificar y fundamentar los puntos en los que se sostiene este proyecto.
+
+
 Sólo para probar algunas cosas como las referencias.
 La primera cita es a Lamport~\cite{lamport79}.
 La segunda cita es para Lamport nuevamente~\cite{lamport78}.
@@ -182,27 +321,15 @@ En un desarrollo de proyecto Agile utilizando Kanban, el proyecto se planifica d
 Cabe señalar que dependiendo del tamaño, la estructura y los objetivos del equipo, el flujo de trabajo se puede asignar para cumplir el proceso único de cualquier equipo determinado.
 La metodología kanban se basa en una transparencia total del trabajo y una comunicación en tiempo real de la capacidad. Por lo tanto, el tablero de kanban debería considerarse la única fuente fiable sobre el trabajo del equipo.
 
-Sólo para incluir figuras y tablas.
-\begin{figure}[h]
-\vspace*{1cm}
-\includegraphics[bb=0 0 640 480, width=.5\linewidth]{latexlogo.png}
-\vspace*{1cm}
-\caption{La primera figura de la memoria}
-\end{figure}
-\begin{table}[h]
-\vspace*{1cm}
-(aqui debiera ir la tabla)
-\vspace*{1cm}
-\caption{La primera tabla de la memoria}
-\end{table}
+\section{Resumen del cap\'{i}tulo}
+En el capítulo anterior, se detalla la Metodología de desarrollo de software utilizada para la implementación de PRACUTAL. Dentro de las existentes en la actualidad, se elige usar ``Agile'' como procedimiento, ya que corresponde a una metodología dinámica, práctica y fácil de gestionar. 
+Como artefacto de asignación y seguimiento de tareas, se utiliza ``Kanban'', que corresponde a un tablero con una serie de actividades a realizar, las cuales son llevadas a cabo mediante pasos básicos de este tablero, que son: ``Por hacer''; ``En curso'' y; ``Hecho''.
 
 %%PUNTO 4
 \chapter{Desarrollo de la soluci\'{o}n}
-
-\section{Definiciones previas}
 En el siguiente capítulo se detallan a nivel técnico, la arquitectura y tecnologías utilizadas; se definen tanto el diseño funcional y técnico como los niveles de acceso a la información (gestión de perfiles) implementados en este proyecto.
 
-\subsection{Arquitectura}
+\section{Arquitectura}
 La solución presenta una Arquitectura basada en Java, organizada en los siguientes componentes lógicos.
 \begin{itemize}
 	\item Capa de Presentación.
@@ -229,7 +356,7 @@ Descripción del Diagrama:
 	\item Una vez procesada la información, el controlador despliega la información en la capa de vista.
 \end{enumerate}
 
-\subsection{Tecnolog\'{i}as}
+\section{Tecnolog\'{i}as}
 Para solventar la solución, se realiza investigación respecto a las tecnologías actuales que ofrece el mercado open source para el desarrollo de aplicaciones considerando como alternativas de implementación 3 opciones:
 \begin{itemize}
 	\item Aplicación Web en Java con Spring Framework.
@@ -238,183 +365,301 @@ Para solventar la solución, se realiza investigación respecto a las tecnologías 
 \end{itemize}
 Finalmente, se opta por la utilización de Ninja Framework, al ser éste un framework web Full Stack, construido con java puro, lo cual facilita la curva de aprendizaje. Adicionalmente, se consideró este framework debido a que usa tecnologías maduras (robustas) ante la experimentación.
 
-\subsection{Dise\~{n}o funcional}
+\section{Dise\~{n}o funcional}
 
-\subsubsection{Requerimientos funcionales}
+\subsection{Requerimientos funcionales}
+\begin{longtable}{|l|p{4cm}|p{6cm}|l|}
+	\hline
+	ID & Nombre & Descripci\'{o}n & Impacto \\ \hline
+	RF001 & Iniciar sesión en el sistema & El usuario debe ingresar al sistema con su nombre de usuario (email) y contraseña. & Alto \\ \hline
+	RF002 & Mantenedor Alumno & Los alumnos ya se encuentran registrados en el sistema, ellos deben activar su registro ingresando los datos de su perfil y contraseña. Además se podrá modificar, eliminar y ver el perfil de un alumno. & Alto \\ \hline
+	RF003 & Listar Alumnos & El administrador y el jefe de carrera pueden listar alumnos, el primero, todos los del sistema y el segundo los pertenecientes a su carrera. & Medio \\ \hline
+	RF004 & Crear Alumno & El centro de prácticas debe poder agregar una nuevo alumno al sistema. & Alto \\ \hline
+	RF005 & Mantenedor Jefe de Carrera & Es posible crear, modificar, eliminar y ver un jefe de carrera. & Medio \\ \hline
+	RF006 & Restringir acceso al sistema & El Sistema debe tener privilegios de acceso para los diferentes tipos de usuario, de acuerdo a las funciones que realiza. & Alto \\ \hline
+	RF007 & Postular a práctica & El sistema permite realizar una postulación si el alumno cumple con los requisitos necesarios para postular a una práctica. Un alumno puede postular a varias ofertas de práctica. & Alto \\ \hline
+	RF008 & Listar postulaciones & Un alumno puede listar las postulaciones que ha hecho en el sistema. Un administrador puede listar todas las postulaciones. & Alto \\ \hline
+	RF009 & Postular a práctica externa & Un alumno puede ingresar una práctica directamente al sistema. & Alto \\ \hline
+	RF010 & Aprobar práctica externa & Una práctica externa ingresada por el alumno debe ser aprobada por el centro de prácticas o el director de escuela & Alto \\ \hline
+	RF011 & Crear oferta de práctica & Un actor puede crear una oferta de práctica. Esto aplica a la Organización, Centro de practicas, Director de escuela. & Alto \\ \hline
+	RF012 & Eliminar oferta de práctica & La organización debe poder eliminar una oferta de práctica siempre y cuando sea antes de ser aprobada por el centro de prácticas o director de escuela & Medio \\ \hline
+	RF013 & Visualizar detalle oferta & Ver información en detalle de una oferta de práctica. & Alto \\ \hline
+	RF014 & Listar ofertas & El sistema debe poder listar las ofertas de prácticas:
+	\begin{compactitem}
+		\item Director de escuela y Centro de prácticas pueden ver todas las ofertas confirmadas por la organización.
+		\item Organización puede ver la lista de ofertas que le pertenecen.
+		\item Estudiante solo puede ver las ofertas aprobadas.
+	\end{compactitem} & Alto \\ \hline
+	RF015 & Filtrar Ofertas de practica & Centro de prácticas debe poder realizar los siguientes filtros:
+	\begin{compactitem}
+		\item Ofertas vigentes 
+		\item Ofertas cerradas
+	\end{compactitem} & Medio \\ \hline
+	RF016 & Asignar práctica a alumno & El centro de prácticas asignará al alumno a alguna oferta de práctica. & Alto \\ \hline
+	RF017 & Evaluar Alumno & La organización debe ingresar una evaluación del alumno una vez finalizado el trabajo práctico & Alto \\ \hline
+	RF018 & Visualizar bitácora & El sistema debe permitir ver una bitácora con la información ingresada por el alumno. & Medio \\ \hline
+	RF019 & Visualizar evaluación & El sistema debe permitir ver la evaluación que la organización ha ingresado la práctica. & Alto \\ \hline
+	RF020 & Crear Organización & El centro de prácticas debe poder agregar una nueva organización al sistema. & Alto \\ \hline
+	RF021 & Modificar Organización & El centro de prácticas debe poder modificar los datos de una organización. & Medio \\ \hline
+	RF022 & Desactivar/Activar Organización & El centro de prácticas debe poder desactivar alguna organización o volver a activar una ya desactivada. & Medio \\ \hline
+	RF023 & Listar organizaciones & El centro de prácticas puede ver el listado de las organizaciones que están en el sistema. & Medio \\ \hline
+	RF024 & Listar prácticas & El sistema debe permitir listar prácticas:
+	\begin{compactitem}
+		\item Centro de prácticas debe ver todas las prácticas
+		\item Alumno debe ver el listado de sus prácticas
+		\item Organización debe ver el listado de sus prácticas.
+	\end{compactitem} & Alto \\ \hline
+	RF025 & Seleccionar candidato & El centro de prácticas puede seleccionar candidatos para ser presentados en grupo a la empresa. & Medio \\ \hline
+	RF026 & Ingresar entrada en bitácora & El estudiante puede crear entradas en la bitácora de la práctica que se encuentre trabajando. & Medio \\ \hline
+	RF027 & Aprobar Oferta & La empresa puede aprobar la oferta que esté ingresando, una vez que se encuentre su versión definitiva. Cuando esté aprobada, la oferta es visible para el centro de prácticas y se puede proceder a su revisión. & Alto \\ \hline
+	RF028 & Modificar Oferta & Los usuarios puede modificar oferta considerando las siguientes restricciones:
+	\begin{compactitem}
+		\item Empresa solo puede modificar si la oferta aun no se encuentra aprobada por esta.
+		\item Centro de prácticas y Director de escuela pueden modificar la oferta en cualquier momento
+		\item Estudiante solo puede modificar prácticas externas ingresadas por el.
+	\end{compactitem} & Medio \\ \hline
+	RF029 & Publicar oferta & El centro de prácticas puede realizar la acción de publicar una oferta, la cual consiste en hacer la oferta visible para los alumnos del sistema. & Alto \\ \hline
+	RF030 & Visualizar organización & El sistema debe permitir ver detalle de la organización creada. & Medio \\ \hline
+	RF031 & Visualizar alumno & El sistema debe permitir ver detalle del alumno creado. & Medio \\ \hline
+	RF032 & Editar alumno & El sistema debe permitir editar información del alumno. & Medio \\ \hline
+	RF033 & Crear director de escuela & El sistema debe permitir al centro de prácticas crear cuenta para director de escuela de la facultad. & Medio \\ \hline
+	RF034 & Editar director de escuela & El sistema debe permitir editar información del director de escuela. & Medio \\ \hline
+	RF035 & Visualizar director de escuela & El sistema debe permitir ver detalle del director de escuela creado. & Medio \\ \hline
+	RF036 & Crear carrera & El sistema debe permitir crear una nueva carrera. & Medio \\ \hline
+	RF037 & Editar carrera & El sistema debe permitir editar información de la carrera. & Medio \\ \hline
+	RF038 & Visualizar carrera & El sistema debe permitir ver detalle de una carrera. & Medio \\ \hline
+	RF039 & Crear módulo de gestión de prácticas & El sistema debe proveer un módulo para la gestión de prácticas. & Alto \\ \hline
+	RF040 & Generar módulo de gestión de ofertas & El sistema debe proveer un módulo para la gestión de ofertas. & Alto \\ \hline
+	RF041 & Generar módulo de administración & El sistema debe proveer un módulo que se encargue de la administración general de la aplicación. & Alto \\ \hline
+	RF042 & Generar módulo de gestión de postulaciones & El sistema debe proveer un módulo que se encargue del flujo de la postulación. & Alto \\ \hline
+\end{longtable}
 
-\subsubsection{Casos de uso}
+\subsection{Requerimientos no funcionales}
+\begin{longtable}{|l|p{4cm}|p{7.5cm}|}
+	\hline
+	ID & Nombre & Descripci\'{o}n \\ \hline
+	RNF001 & Facilidad de uso & El sistema debe ser de fácil manejo para los distintos tipos de usuario. \\ \hline
+	RNF002 & Eficacia & El sistema debe dar cumplimiento a los requerimientos planteados. \\ \hline
+	RNF003 & Eficiencia & Optimizar los recursos y tiempo al momento de utilizar las funcionalidades. \\ \hline
+	RNF004 & Estabilidad & El sistema debe ser lo suficientemente robusto al realizar las distintas operaciones ya que la información que se maneja es de importancia. \\ \hline
+	RNF005 & Tiempo de ejecución de operaciones & El sistema debe dar cumplimiento a las tps (2-3 tps) por cada operación que se envíe al servidor. \\ \hline
+	RNF006 & Seguridad de datos & El sistema debe mantener seguros e intactos los datos almacenados en caso de alguna eventualidad. \\ \hline
+	RNF007 & Seguridad de acceso & El sistema deberá verificar que los datos al momento de ingresar al sistema son correctos y que coinciden con los registros de nombre de usuario y contraseña. \\ \hline
+	RNF008 & Validación de información & El sistema debe ser capaz de validar automáticamente el ingreso de información, tomando en cuenta aspectos como campos obligatorios, longitud de caracteres, etc. \\ \hline
+	RNF009 & Disponibilidad & Garantizar que el sistema esté disponible en todo momento. \\ \hline
+	RNF010 & Responsividad & El sistema debe permitir su acceso desde distintos dispositivos. \\ \hline
+\end{longtable}
 
-Diagramas casos de uso
+\clearpage
+\subsection{Casos de uso}
 
-Especificacion de casos de uso
+\subsubsection{Diagramas casos de uso}
 
+Caso de uso de Alto Nivel
+\begin{figure}[H]
+	\vspace*{1cm}
+	\includegraphics[width=.6\linewidth]{CU_Sistema.png}
+	\vspace*{1cm}
+	\caption{Diagrama: CU01 Alto Nivel}
+\end{figure}
+
+\clearpage
+Caso de uso: Gestionar postulación
+\begin{figure}[H]
+	\vspace*{1cm}
+	\includegraphics[width=.8\linewidth]{CU_Postular.png}
+	\vspace*{1cm}
+	\caption{Diagrama: CU02 Gestionar postulación}
+\end{figure}
+
+\clearpage
+Caso de uso: Gestionar oferta
+\begin{figure}[H]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{CU_Oferta.png}
+	\vspace*{1cm}
+	\caption{Diagrama: CU03 Gestionar oferta}
+\end{figure}
+
+\clearpage
+Caso de uso: Gestionar práctica
+\begin{figure}[H]
+	\vspace*{1cm}
+	\includegraphics[width=.7\linewidth]{CU_Practica.png}
+	\vspace*{1cm}
+	\caption{Diagrama: CU04 Gestionar práctica}
+\end{figure}
+
+\clearpage
+Caso de uso: Administrar sistema
+\begin{figure}[H]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{CU_Administrador1.png}
+	\vspace*{1cm}
+	\caption{Diagrama: CU05  Administrar sistema}
+\end{figure}
+
+\clearpage
+\subsubsection{Especificaci\'{o}n de casos de uso}
 %%Inicio CU001
-
 \begin{enumerate}
 	\item Caso de Uso C001 - Postular a una oferta
-		\begin{table}[H]
-			\vspace*{1cm}
-			\begin{tabular}{|c|p{4cm}|c|p{7cm}|}
-				\hline
-					\multicolumn{4}{|l|}{
-						\begin{tabular}{p{3cm}|p{4in}}
-						Actores &  Sistema, Estudiante
-						\end{tabular}
-					}
-					\\ 
-				\hline
-					\multicolumn{4}{|l|}{
-						\begin{tabular}{p{3cm}|p{4in}}
-						Propósito &  Permitir al estudiante postular a una oferta de práctica. 
-						\end{tabular}
-					}
-					\\
-				\hline
-					\multicolumn{4}{|l|}{
-						\begin{tabular}{p{3cm}|p{4in}}
-							Pre-Condición & 
-							\begin{compactitem}
-								\item Usuario logueado correctamente en aplicación.
-								\item Ingresar al módulo de ofertas.
-								\item Debe existir una oferta de práctica creada.
-							\end{compactitem}
-						\end{tabular}
-					}
-					\\
-				\hline
-					\multicolumn{4}{|l|}{
-						\begin{tabular}{p{3cm}|p{4in}}
-							Post-Condición & El estudiante postula exitosamente a una oferta.
-						\end{tabular}
-					}
-					\\
-				\hline
-					\multicolumn{4}{|l|}{
-						\begin{tabular}{p{3cm}|p{4in}}
-							Requerimientos Cubiertos & RF007
-						\end{tabular}
-					}
-					\\
-				\hline
-					\multicolumn{4}{|l|}{
-						Curso Normal de Eventos
-					}
-					\\
-				\hline
-				Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
-				1 & Estudiante presiona el botón ``Ver detalle'' de una oferta & 2 & Sistema despliega la vista con la información detallada de la oferta. \\ \hline
-				3 & Estudiante presiona botón ``Postular a esta oferta''. & 4 & Sistema muestra modal que permite adjuntar una versión actualizada del currículum del estudiante. \\ \hline
-				5 & Estudiante adjunta curriculum. Luego presiona el botón ``Postular''. & 6 & Sistema devuelve un mensaje indicando que la postulación se realizó correctamente y retorna al menú de Ofertas. \\ \hline
-				& & 7 & Fin. \\ \hline
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
 				\multicolumn{4}{|l|}{
-					Curso Alternativo: Estudiante no adjunta curriculum (Flujo se inicia en paso 4).
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores &  Sistema, Estudiante
+					\end{tabular}
 				}
-				\\ \hline
-				Paso & 
-				\multicolumn{3}{c|}{
-					Detalle de Curso Aternativo
-				} \\ \hline
-				5 & \multicolumn{3}{p{12cm}|}{
-					Estudiante presiona botón ``Postular''.
-				} \\ \hline
-				6 & \multicolumn{3}{p{12cm}|}{
-					Continúa en paso 6 de flujo normal.
-				} \\ \hline
+				\\ 
+			\hline
 				\multicolumn{4}{|l|}{
-					Curso Alternativo: Sistema falla al realizar postulación (Flujo se inicia en paso 5).
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito &  Permitir al estudiante postular a una oferta de práctica. 
+					\end{tabular}
 				}
-				\\ \hline
-				Paso & 
-				\multicolumn{3}{c|}{
-					Detalle de Curso Aternativo
-				} \\ \hline
-				6 & \multicolumn{3}{p{12cm}|}{
-					Sistema devuelve mensaje indicando que ha ocurrido un error y retorna al menú de Ofertas.
-				} \\ \hline
-				7 & \multicolumn{3}{l|}{
-					Fin.
-				} \\ \hline
-				\end{tabular}
-			\vspace*{1cm}
-		\end{table}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Usuario logueado correctamente en aplicación.
+							\item Ingresar al módulo de ofertas.
+							\item Debe existir una oferta de práctica creada.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & El estudiante postula exitosamente a una oferta.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF007
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Estudiante presiona el botón ``Ver detalle'' de una oferta & 2 & Sistema despliega la vista con la información detallada de la oferta. \\ \hline
+			3 & Estudiante presiona botón ``Postular a esta oferta''. & 4 & Sistema muestra modal que permite adjuntar una versión actualizada del currículum del estudiante. \\ \hline
+			5 & Estudiante adjunta curriculum. Luego presiona el botón ``Postular''. & 6 & Sistema devuelve un mensaje indicando que la postulación se realizó correctamente y retorna al menú de Ofertas. \\ \hline
+			& & 7 & Fin. \\ \hline
+			\multicolumn{4}{|l|}{
+				Curso Alternativo: Estudiante no adjunta curriculum (Flujo se inicia en paso 4).
+			}
+			\\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			5 & \multicolumn{3}{p{12cm}|}{
+				Estudiante presiona botón ``Postular''.
+			} \\ \hline
+			6 & \multicolumn{3}{p{12cm}|}{
+				Continúa en paso 6 de flujo normal.
+			} \\ \hline
+			\multicolumn{4}{|l|}{
+				Curso Alternativo: Sistema falla al realizar postulación (Flujo se inicia en paso 5).
+			}
+			\\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			6 & \multicolumn{3}{p{12cm}|}{
+				Sistema devuelve mensaje indicando que ha ocurrido un error y retorna al menú de Ofertas.
+			} \\ \hline
+			7 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline
+		\end{longtable}
 
 %%Fin Cu001
+	\clearpage
 	\item Caso de Uso CU002 - Mostrar Postulaciones
-		\begin{table}[H]
-			\vspace*{1cm}
-			\begin{tabular}{|c|p{4cm}|c|p{7cm}|}
-				\hline
-					\multicolumn{4}{|l|}{
-						\begin{tabular}{p{3cm}|p{4in}}
-						Actores &  Sistema, Estudiante
-						\end{tabular}
-					}
-					\\ 
-				\hline
-					\multicolumn{4}{|l|}{
-						\begin{tabular}{p{3cm}|p{4in}}
-						Propósito &  Permitir al estudiante mostrar el listado de sus postulaciones. 
-						\end{tabular}
-					}
-					\\
-				\hline
-					\multicolumn{4}{|l|}{
-						\begin{tabular}{p{3cm}|p{4in}}
-							Pre-Condición &
-							\begin{compactitem}
-								\item Usuario logueado correctamente en aplicación.
-								\item Ingresar al módulo de ofertas.
-							\end{compactitem}
-						\end{tabular}
-					}
-					\\
-				\hline
-					\multicolumn{4}{|l|}{
-						\begin{tabular}{p{3cm}|p{4in}}
-							Post-Condición & El estudiante visualiza listado de postulaciones propias.
-						\end{tabular}
-					}
-					\\
-				\hline
-					\multicolumn{4}{|l|}{
-						\begin{tabular}{p{3cm}|p{4in}}
-							Requerimientos Cubiertos & RF008
-						\end{tabular}
-					}
-					\\
-				\hline
-					\multicolumn{4}{|l|}{
-						Curso Normal de Eventos
-					}
-					\\
-				\hline
-				Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
-				1 & Estudiante presiona el botón ``Mis postulaciones''. & 2 & Sistema despliega tabla con el listado de las postulaciones con las siguientes columnas:
-				\begin{compactitem}
-					\item Título
-					\item Empresa
-					\item Estado
-					\item Fecha postulación
-				\end{compactitem}
-				\\ \hline
-				& & 3 & Fin. \\ \hline
-				\multicolumn{4}{|p{15cm}|}{
-					Curso Alternativo: No existen postulaciones para visualizar (Flujo se inicia en paso 1).
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores &  Sistema, Estudiante
+					\end{tabular}
 				}
-				\\ \hline
-				Paso & 
-				\multicolumn{3}{c|}{
-					Detalle de Curso Aternativo
-				} \\ \hline
-				2 & \multicolumn{3}{p{12cm}|}{
-					Sistema despliega mensaje ``No existen postulaciones para mostrar''.
-				} \\ \hline
-				3 & \multicolumn{3}{l|}{
-					Fin.
-				} \\ \hline
-				\end{tabular}
-			\vspace*{1cm}
-		\end{table}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito &  Permitir al estudiante mostrar el listado de sus postulaciones. 
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición &
+						\begin{compactitem}
+							\item Usuario logueado correctamente en aplicación.
+							\item Ingresar al módulo de ofertas.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & El estudiante visualiza listado de postulaciones propias.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF008
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Estudiante presiona el botón ``Mis postulaciones''. & 2 & Sistema despliega tabla con el listado de las postulaciones con las siguientes columnas:
+			\begin{compactitem}
+				\item Título
+				\item Empresa
+				\item Estado
+				\item Fecha postulación
+			\end{compactitem}
+			\\ \hline
+			& & 3 & Fin. \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: No existen postulaciones para visualizar (Flujo se inicia en paso 1).
+			}
+			\\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			2 & \multicolumn{3}{p{12cm}|}{
+				Sistema despliega mensaje ``No existen postulaciones para mostrar''.
+			} \\ \hline
+			3 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline
+		\end{longtable}
 
 %%Inicio CU003
 
@@ -3513,36 +3758,183 @@ Especificacion de casos de uso
 
 \end{enumerate}
 
-\subsubsection{Procesos del sistema}
+\clearpage
+\subsection{Procesos del sistema}
+A continuación se muestra una especificación completa de todos los procesos y subprocesos  relacionados con la gestión de trabajos prácticos llevada a cabo a través del sistema PRACUTAL.
 
-\begin{itemize}
-	\item Diagrama de proceso global PR01-Sistema de Gestión de trabajos prácticos ``PRACUTAL''.
-\end{itemize}
-\begin{figure}[H]
-	\vspace*{1cm}
-	\includegraphics[width=\linewidth]{PR01-SistemaGestionTrabajos.png}
-	\vspace*{1cm}
-	\caption{Proceso Sistema de Gestión de trabajos prácticos ``PRACUTAL''}
-\end{figure}
+\begin{enumerate}
+	\item Proceso Global PR01-Sistema de Gestión de trabajos prácticos ``PRACUTAL''.
+	\begin{figure}[H]
+		\vspace*{1cm}
+		\includegraphics[width=\linewidth]{PR01-SistemaGestionTrabajos.png}
+		\vspace*{1cm}
+		\caption{Proceso Sistema de Gestión de trabajos prácticos ``PRACUTAL''}
+	\end{figure}
+	
 
-Descripción del Diagrama: \\
-El diagrama representa el proceso global que realiza el sistema PRACUTAL para gestionar los trabajos prácticos de los estudiantes del facultad de Ingeniería. Se visualizan dos grandes secciones que diferencian el flujo de gestión de postulaciones y el flujo de gestión de prácticas. Todo lo anterior, distinguiendo el actor relacionado con cada una de las tareas que le corresponden.
+	\begin{enumerate}
+		\item Descripción del Diagrama: \\ 
+		El diagrama representa el proceso global que realiza el sistema PRACUTAL para gestionar los trabajos prácticos de los estudiantes del facultad de Ingeniería. Se visualizan dos grandes secciones que diferencian el flujo de gestión de postulaciones y el flujo de gestión de prácticas. Todo lo anterior, distinguiendo el actor relacionado con cada una de las tareas que le corresponden.
+		\item Elementos del proceso
+		
+		\begin{enumerate}
+			\item \textbf{Inicio} \\
+			Descripción: El proceso se inicia por parte de la empresa.
+			\item \textbf{Crear oferta} \\
+			Descripción: Creación de la oferta de trabajo práctico. \\
+			Ejecutantes: Empresa
+			\item \textbf{Confirmar oferta} \\
+			Descripción: Corresponde a la confirmación de la oferta de práctica. \\
+			Ejecutantes: Empresa
+			\item \textbf{Validar oferta}
+			Descripción: Corresponde al subproceso de validación de una oferta de práctica. \\
+			Ejecutantes: Centro de Prácticas, Director de Escuela
+			\item \textbf{Postular oferta} \\
+			Descripción: Corresponde al proceso de postulación a una oferta de trabajo práctico. \\ 
+			Ejecutantes: Estudiante 
+			\item \textbf{Visualizar postulantes} \\
+			Descripción: Corresponde al subproceso de visualización de postulantes a una oferta de trabajo práctico. \\
+			Ejecutantes: Director de Escuela, Centro de Prácticas
+			\item \textbf{Escoger finalista} \\
+			Descripción: Corresponde al proceso de escoger al finalista que se adjudicará la oferta de práctica. \\
+			Ejecutantes: Empresa, Centro de Prácticas, Director de Escuela
+			\item \textbf{Notificar finalista} \\
+			Descripción: Corresponde a un correo que se le envía al estudiante notificándole que ha sido seleccionado como finalista para la postulación.
+			\item \textbf{Confirmar estudiante} \\
+			Descripción: Subproceso relacionado con la confirmación del estudiante seleccionado para la práctica. \\
+			Ejecutantes: Centro de Prácticas, Director de Escuela
+		\end{enumerate}
+		\begin{enumerate}
+			\item \textbf{Inicio} \\
+			Descripción: El proceso se inicia por parte del estudiante.
+ 			\item \textbf{Ingresar práctica externa} \\
+			Descripción: Estudiante ingresa práctica externa en el sistema. \\
+			Ejecutantes: Estudiante
+			\item \textbf{Validar práctica externa} \\
+			Descripción: Se valida práctica externa ingresada previamente por el estudiante. \\
+			Ejecutantes: Centro de Prácticas, Director de Escuela
+ 			\item \textbf{¿Práctica OK?} \\
+			Descripción: Decisión que implica determinar si la práctica está OK o no. \\ 
+			Flujos: SI/NO
+			\item \textbf{Registrar entrada en bitácora} \\
+			Descripción: Se registra práctica externa en entrada de bitácora. \\ 
+			Ejecutantes: Estudiante \\
+			Tipo de ciclo: Estándar
+			\item \textbf{Evaluar práctica} \\
+			Descripción: Corresponde a la evaluación de la práctica externa registrada por el estudiante. \\
+			Ejecutantes: Empresa
+ 			\item \textbf{Visualizar evaluación} \\
+			Descripción: Corresponde a la visualización de la evaluación de la práctica, la cual fue otorgada previamente por la empresa.\\
+			Ejecutantes: Centro de Prácticas
+			\item \textbf{Fin}
+			Descripción: Corresponde al fin del proceso de gestión de trabajo práctico.
+			\item \textbf{Visualizar evaluación} \\
+			Descripción: Corresponde a la visualización de la evaluación de la práctica, la cual fue otorgada previamente por la empresa. \\
+			Ejecutantes: Director de Escuela
+			\item \textbf{Fin} \\
+			Descripción: Corresponde al fin del proceso de gestión de trabajo práctico.
+			\item \textbf{Fin} \\
+			Descripción: Práctica rechazada.
+		\end{enumerate}
 
-\begin{itemize}
+	\end{enumerate}
+
+	%%DIAGRAMA 2
 	\item Diagrama de sub proceso PR01.1-Validar oferta.
-\end{itemize}
-\begin{figure}[H]
-	\vspace*{1cm}
-	\includegraphics[width=\linewidth]{PR01_1-ValidarOferta.png}
-	\vspace*{1cm}
-	\caption{Sub Proceso Validar oferta}
-\end{figure}
+	\begin{figure}[H]
+		\vspace*{1cm}
+		\includegraphics[width=\linewidth]{PR01_1-ValidarOferta.png}
+		\vspace*{1cm}
+		\caption{Diagrama de sub proceso PR01.1-Validar oferta}
+	\end{figure}
 
-Descripción del Diagrama: \\ 
-El diagrama representa el subproceso ``Validar oferta'', el cual puede ser realizado por el centro de prácticas o el director de escuela. Luego de validada, es posible publicar la oferta, de lo contrario, se permite su edición para continuar el flujo general.
+	\begin{enumerate}
+		\item Descripción del Diagrama: \\ 
+		El diagrama representa el subproceso ``Validar oferta'', el cual puede ser realizado por el centro de prácticas o el director de escuela. Luego de validada, es posible publicar la oferta, de lo contrario, se permite su edición para continuar el flujo general.
+		\item Elementos del proceso
+		\begin{enumerate}
+			\item \textbf{Inicio} \\
+			Descripción: Inicio de subproceso validar oferta.
+			\item \textbf{Validar oferta} \\
+			Descripción: Corresponde al subproceso de validación de una oferta de práctica. \\
+			Ejecutantes: Director de Escuela, Centro de Prácticas
+			\item \textbf{¿Oferta OK?} \\
+			Descripción: Corresponde a la decisión de si la Oferta de práctica está OK o no. \\
+			Flujos: SI/NO
+			\item \textbf{Publicar oferta} \\
+			Descripción: Proceso que corresponde a la publicación de una oferta luego de ser validada como OK. \\
+			Ejecutantes: Centro de Prácticas, Director de Escuela
+			\item \textbf{Editar oferta} \\
+			Descripción: Si la oferta no se encuentra OK, se puede realizar edición de su detalle. \\
+			Ejecutantes: Centro de Prácticas, Director de Escuela
+			\item \textbf{Fin} \\
+			Descripción: Corresponde al fin del subproceso para continuar con el flujo general. 
+		\end{enumerate}		
+	\end{enumerate}
 
+	\item SubProceso PR01.2 Visualizar postulantes.
+	\begin{figure}[H]
+		\vspace*{1cm}
+		\includegraphics[width=\linewidth]{SubprocesoVisualizarPostulantes.png}
+		\vspace*{1cm}
+		\caption{Diagrama de sub proceso PR01.2-Visualizar postulantes}
+	\end{figure}
+	\begin{enumerate}
+		\item Descripción del Diagrama: \\ 
+		El diagrama representa el subproceso ``Visualizar postulantes'', el cual puede ser realizado por el centro de prácticas o el director de escuela. Luego de revisados los postulantes, es posible seleccionar a los candidatos y continuar con el flujo de procesos general.
+		\item Elementos del proceso
+		\begin{enumerate}
+			\item \textbf{Inicio} \\
+			Descripción: Inicio de subproceso visualizar postulantes a una oferta.
+			\item \textbf{Visualizar postulantes} \\
+			Descripción: Subproceso de visualización de postulantes a una oferta de trabajo práctico. \\
+			Ejecutantes: Director de Escuela, Centro de Prácticas
+			\item \textbf{Seleccionar candidatos} \\
+			Descripción: Luego de visualizados los postulantes, se procede a la selección de los posibles candidatos. \\
+			Ejecutantes: Director de Escuela, Centro de Prácticas
+			\item \textbf{Fin} \\
+			Descripción: Corresponde al fin del subproceso para continuar con el flujo general.
+		\end{enumerate}		
+	\end{enumerate}
 
+	\item SubProceso PR01.3 Confirmar estudiante
+	\begin{figure}[H]
+		\vspace*{1cm}
+		\includegraphics[width=\linewidth]{SubprocesoConfirmarEstudiante.png}
+		\vspace*{1cm}
+		\caption{Diagrama de sub proceso PR01.3-Confirmar estudiante}
+	\end{figure}
+	\begin{enumerate}
+		\item Descripción del Diagrama: \\ 
+		El diagrama representa el subproceso ``Confirmar estudiante'', el cual puede ser realizado por el centro de prácticas o el director de escuela. Luego de confirmado, se procede a cerrar el proceso. De lo contrario, se vuelve al proceso de selección de candidatos para continuar con el flujo general.
+		\item Elementos del proceso
+		\begin{enumerate}
+			\item \textbf{Inicio} \\
+			Descripción: Inicio de subproceso confirmar estudiante.
+			\item \textbf{Confirmar estudiante} \\
+			Descripción: Corresponde a la confirmación del estudiante seleccionado para la práctica. \\
+			Ejecutantes: Centro de Prácticas, Director de Escuela
+			\item \textbf{¿Estudiante OK?} \\
+			Descripción: Decisión de confirmación de estudiante OK o no. \\
+			Flujos: SI/NO
+			\item \textbf{Cerrar proceso} \\
+			Descripción: Corresponde al cierre del proceso de gestión de ofertas de prácticas. \\
+			Ejecutantes: Director de Escuela, Centro de Prácticas
+			\item \textbf{Seleccionar candidatos} \\
+			Descripción: Si el estudiante no está OK, es posible retornar al proceso de selección de candidatos para nuevamente elegir uno/s.
+			\item \textbf{Fin} \\
+			Descripción: Corresponde al fin del subproceso para continuar con el flujo general.
+		\end{enumerate}		
+	\end{enumerate}
 
+	\item Recursos participantes
+	\begin{itemize}
+		\item Estudiante (rol)
+		\item Director de escuela (rol)
+		\item Centro de prácticas (rol)
+		\item Empresa (rol)
+	\end{itemize}
+\end{enumerate}
 
 
 \subsection{Dise\~{n}o t\'{e}cnico}
@@ -3553,6 +3945,14 @@ El diagrama representa el subproceso ``Validar oferta'', el cual puede ser reali
 	\includegraphics[width=\linewidth]{memoriaIdea.png}
 	\vspace*{1cm}
 	\caption{Diagrama de clases de la Aplicaci\'{o}n}
+\end{figure}
+
+\subsubsection{Modelo de datos}
+\begin{figure}[H]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{modelo_datos.png}
+	\vspace*{1cm}
+	\caption{Modelo de datos PRACUTAL}
 \end{figure}
 
 
