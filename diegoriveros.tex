@@ -134,7 +134,10 @@ En el presente apartado se mencionan las consideraciones que se deben contemplar
 \end{itemize}
 
 \section{Resumen del cap\'{i}tulo}
-%%COMPLETAR ESTA SECCION
+En el primer capítulo anteriormente expuesto, se mencionan las principales características que tendrá el sistema "PRACUTAL", se incluyen descripción del contexto en el cual se basa su origen y, trabajo previo relacionado. Posteriormente se describen el problema actual y se realiza la propuesta de solución para abordar dicha situación.
+
+Adicionalmente, se detallan el objetivo general y específicos de la aplicación; continuando con el alcance, consideraciones, restricciones y supuestos en los que se enmarca la implementación del software y desarrollo de esta memoria de título.
+ 
 
 %% contenido del segundo capítulo
 \chapter{Marco te\'{o}rico}
@@ -245,6 +248,8 @@ Diagramas casos de uso
 
 Especificacion de casos de uso
 
+%%Inicio CU001
+
 \begin{enumerate}
 	\item Caso de Uso C001 - Postular a una oferta
 		\begin{table}[H]
@@ -333,6 +338,7 @@ Especificacion de casos de uso
 			\vspace*{1cm}
 		\end{table}
 
+%%Fin Cu001
 	\item Caso de Uso CU002 - Mostrar Postulaciones
 		\begin{table}[H]
 			\vspace*{1cm}
@@ -409,6 +415,8 @@ Especificacion de casos de uso
 				\end{tabular}
 			\vspace*{1cm}
 		\end{table}
+
+%%Inicio CU003
 
 	\clearpage
 	\item Caso de Uso CU003 - Agregar práctica externa
@@ -511,7 +519,7 @@ Especificacion de casos de uso
 				Fin.
 			} \\ \hline
 		\end{longtable}
-
+%%Fin Cu003
 	\clearpage
 	\item Caso de Uso CU004 - Ver detalle oferta
 		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
@@ -738,6 +746,7 @@ Especificacion de casos de uso
 			& & 4 & Fin. \\ \hline
 		\end{longtable}
 
+	
 	\clearpage
 	\item Caso de Uso CU006 - Seleccionar Candidato
 		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
@@ -1165,6 +1174,8 @@ Especificacion de casos de uso
 			} \\ \hline
 		\end{longtable}
 
+%%Inicio CU013
+
 	\clearpage
 		\item Caso de Uso CU013 - Ver evaluación
 		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
@@ -1230,6 +1241,7 @@ Especificacion de casos de uso
 			} \\ \hline
 		\end{longtable}
 
+%%Fin CU013
 
 %%Inicio CU014		
 
@@ -2262,6 +2274,548 @@ Especificacion de casos de uso
 
 %%Fin Cu022
 
+%% Inicio CU022.1
+
+ \clearpage
+		\item Caso de Uso CU022.1 - Crear estudiante		
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores & Sistema, Centro Prácticas
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito & Poder agregar un estudiante al sistema.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Haber ingresado al sistema.
+							\item Estar en el menú de administración.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Estudiante es agregado al sistema.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF004
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario presiona botón del menú flotante ``Nuevo Estudiante''. & 2 & Sistema muestra formulario con los campos a completar para una nueva estudiante:
+			\begin{compactitem}
+				\item Nombre
+				\item Presentación
+				\item Teléfono
+				\item Correo
+				\item Dirección
+				\item Fecha de nacimiento
+				\item Nacionalidad
+				\item Género
+				\item Número de matrícula
+				\item Carrera
+				\item Año de ingreso
+				\item Curriculum adjunto
+			\end{compactitem} \\ \hline
+			3 & Usuario completa datos y presiona botón ``Enviar''. & 4 & Sistema valida los datos ingresados.  \\ \hline
+			& & 5 & Sistema persiste estudiante en base de datos y retorna mensaje de operación realizada con éxito.  \\ \hline
+			& & 6 & Fin. \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Sistema detecta error en datos ingresados (Flujo se inicia en paso 4)
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			5 & \multicolumn{3}{p{12cm}|}{
+				Sistema despliega mensaje con los errores de validación.
+			} \\ \hline
+			6 & \multicolumn{3}{l|}{
+				Continúa en paso 3 de flujo normal.
+			} \\ \hline	
+				\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Sistema presenta error al registrar información (Flujo se inicia en paso 5)
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			6 & \multicolumn{3}{p{12cm}|}{
+				Sistema despliega mensaje indicando que hubo error al registrar los datos.
+			} \\ \hline
+			7 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline	
+		\end{longtable}	
+
+%%Fin Cu022.1
+
+%% Inicio CU022.2
+
+  \clearpage
+		\item Caso de Uso CU022.2 - Visualizar estudiante
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores & Sistema, Centro Prácticas
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito & Poder visualizar perfil de un estudiante.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Haber ingresado al sistema.
+							\item Estar en el menú de administración.
+							\item Debe existir un estudiante creado.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Ver detalle de un estudiante.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF031
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario presiona opción ``Ver Perfil'' en recuadro de estudiante.  & 2 & Sistema muestra en pantalla el perfil del estudiante con su detalle:
+			\begin{compactitem}
+				\item Nombre
+				\item Presentación
+				\item Teléfono
+				\item Correo
+				\item Dirección
+				\item Fecha de nacimiento
+				\item Nacionalidad
+				\item Género
+				\item Número de matrícula
+				\item Carrera
+				\item Año de ingreso
+				\item Curriculum adjunto
+			\end{compactitem} \\ \hline
+			& & 3 & Fin. \\ \hline
+	\end{longtable}	
+
+%%Fin Cu022.2
+
+%% Inicio CU022.3 
+
+ \clearpage
+		\item Caso de Uso CU022.3 - Editar estudiante		
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores & Sistema, Centro Prácticas
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito & Poder modificar los datos de un estudiante.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Haber ingresado al sistema.
+							\item Estar en el menú de administración.
+							\item Debe existir un estudiante.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Información de estudiante es modificada.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF032
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario presiona botón ``Editar'' en recuadro de estudiante. & 2 & Sistema muestra formulario con los campos a modificar para un estudiante:
+			\begin{compactitem}
+				\item Nombre
+				\item Presentación
+				\item Teléfono
+				\item Correo
+				\item Dirección
+				\item Fecha de nacimiento
+				\item Nacionalidad
+				\item Género
+				\item Número de matrícula
+				\item Carrera
+				\item Año de ingreso
+				\item Curriculum adjunto
+			\end{compactitem} \\ \hline
+			3 & Usuario completa datos y presiona botón ``Enviar''. & 4 & Sistema valida los datos ingresados.  \\ \hline
+			& & 5 & Sistema persiste cambios en los datos del estudiante en base de datos y retorna mensaje de operación realizada con éxito. \\ \hline
+			& & 6 & Fin. \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Sistema detecta error en datos ingresados (Flujo se inicia en paso 4)
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			5 & \multicolumn{3}{p{12cm}|}{
+				Sistema despliega mensaje con los errores de validación.
+			} \\ \hline
+			6 & \multicolumn{3}{l|}{
+				Continúa en paso 3 de flujo normal.
+			} \\ \hline	
+				\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Sistema presenta error al registrar información (Flujo se inicia en paso 5)
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			6 & \multicolumn{3}{p{12cm}|}{
+				Sistema despliega mensaje indicando que hubo error al registrar los datos.
+			} \\ \hline
+			7 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline	
+		\end{longtable}	
+
+%%Fin Cu022.3
+
+%% Inicio CU023
+
+ \clearpage
+		\item Caso de Uso CU023 - Mantenedor Director de Escuela		
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores & Sistema, Centro Prácticas
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito & Poder mantener las cuentas de director de escuela en el sistema (operaciones: Crear; Modificar y Visualizar estudiante).
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Haber ingresado al sistema.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Realización de alguna de las operaciones que el mantenedor posee.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF033-RF034-RF035
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario presiona botón ``Administración''. & 2 & Sistema muestra menú con opciones de mantenedor de director de escuela:
+			\begin{compactitem}
+				\item Crear
+				\item Modificar
+				\item Visualizar
+			\end{compactitem} \\ \hline
+			3 & Usuario ejecuta exitosamente ``Caso de uso 23.1 - Crear Director de Escuela''. & 4 & Sistema retorna al menú de Administración.  \\ \hline
+			& & 5 & Fin. \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Usuario ejecuta Caso de Uso 21.3 - Modificar Estudiante (Flujo se inicia en paso 2)
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			3 & \multicolumn{3}{p{12cm}|}{
+				Continúa en paso 4 de flujo normal.
+			} \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Usuario ejecuta Caso de Uso 21.4 - Visualizar Estudiante (Flujo se inicia en paso 2)
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			3 & \multicolumn{3}{p{12cm}|}{
+				Continúa en paso 4 de flujo normal.
+			} \\ \hline
+			7 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline	
+		\end{longtable}	
+
+%%Fin CU023
+
+%% Inicio CU023.1
+
+ \clearpage
+		\item Caso de Uso CU023.1 - Crear Director de Escuela		
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores & Sistema, Centro Prácticas
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito & Poder agregar un director de escuela al sistema.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Haber ingresado al sistema.
+							\item Estar en el menú de administración.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Director es agregado al sistema.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF033
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario presiona botón del menú flotante ``Nuevo Director de Escuela''. & 2 & Sistema muestra formulario con los campos a completar para un nuevo director de escuela:
+			\begin{compactitem}
+				\item Nombre
+				\item Teléfono
+				\item Correo
+				\item Carrera
+			\end{compactitem} \\ \hline
+			3 & Usuario completa datos y presiona botón ``Enviar''. & 4 & Sistema valida los datos ingresados.  \\ \hline
+			& & 5 & Sistema persiste estudiante en base de datos y retorna mensaje de operación realizada con éxito. \\ \hline
+			& & 6 & Fin. \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Sistema detecta error en datos ingresados (Flujo se inicia en paso 4)
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			5 & \multicolumn{3}{p{12cm}|}{
+				Sistema despliega mensaje con los errores de validación.
+			} \\ \hline
+			6 & \multicolumn{3}{p{12cm}|}{
+				Continúa en paso 3 de flujo normal.
+			} \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Sistema presenta error al registrar información (Flujo se inicia en paso 5)
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			6 & \multicolumn{3}{p{12cm}|}{
+				Sistema despliega mensaje indicando que hubo error al registrar los datos.
+			} \\ \hline
+			7 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline	
+		\end{longtable}	
+
+
+%%Fin CU023.1
+
+%%Inicio CU023.2
+
+ \clearpage
+		\item Caso de Uso CU023.2 - Editar director de escuela
+		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Actores & Sistema, Centro Prácticas
+					\end{tabular}
+				}
+				\\ 
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+					Propósito & Poder modificar los datos de un director de escuela.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Pre-Condición & 
+						\begin{compactitem}
+							\item Haber ingresado al sistema.
+							\item Estar en el menú de administración.
+							\item Debe existir un director de escuela.
+						\end{compactitem}
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Post-Condición & Información de director de escuela es modificada.
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					\begin{tabular}{p{3cm}|p{4in}}
+						Requerimientos Cubiertos & RF034
+					\end{tabular}
+				}
+				\\
+			\hline
+				\multicolumn{4}{|l|}{
+					Curso Normal de Eventos
+				}
+				\\
+			\hline
+			Paso & Acci\'{o}n del actor & Paso & Respuesta del Sistema \\ \hline
+			1 & Usuario presiona botón ``Editar'' en recuadro de director de escuela. & 2 & Sistema muestra formulario con los campos a modificar para un director de escuela:
+			\begin{compactitem}
+				\item Nombre
+				\item Teléfono
+				\item Correo
+				\item Carrera
+			\end{compactitem} \\ \hline
+			3 & Usuario completa datos y presiona botón ``Enviar''. & 4 & Sistema valida los datos ingresados.  \\ \hline
+			& & 5 & Sistema persiste cambios en los datos del director de escuela en base de datos y retorna mensaje de operación realizada con éxito. \\ \hline
+			& & 6 & Fin. \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Sistema detecta error en datos ingresados (Flujo se inicia en paso 4)
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			5 & \multicolumn{3}{p{12cm}|}{
+				Sistema despliega mensaje con los errores de validación.
+			} \\ \hline
+			6 & \multicolumn{3}{p{12cm}|}{
+				Continúa en paso 3 de flujo normal.
+			} \\ \hline
+			\multicolumn{4}{|p{15cm}|}{
+				Curso Alternativo: Sistema presenta error al registrar información (Flujo se inicia en paso 5)
+			} \\ \hline
+			Paso & 
+			\multicolumn{3}{c|}{
+				Detalle de Curso Aternativo
+			} \\ \hline
+			6 & \multicolumn{3}{p{12cm}|}{
+				Sistema despliega mensaje indicando que hubo error al registrar los datos.
+			} \\ \hline
+			7 & \multicolumn{3}{l|}{
+				Fin.
+			} \\ \hline	
+		\end{longtable}	
+
+
+%Fin CU023.2
+
+
 %% Inicio CU023.3 
 
 	\clearpage
@@ -2757,7 +3311,10 @@ Especificacion de casos de uso
 			} \\ \hline	
 			\end{longtable}
 		
-		
+%%Fin CU025
+
+%%Inicio CU026
+	
 		\clearpage
 		\item Caso de Uso CU026 - Gestionar postulaciones
 		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
@@ -2832,6 +3389,9 @@ Especificacion de casos de uso
 				Fin.
 			} \\ \hline	
 			\end{longtable}
+%%Fin CU026
+
+%Inicio CU027
 		
 		\clearpage
 		\item Caso de Uso CU027 - Gestionar ofertas
@@ -2884,7 +3444,13 @@ Especificacion de casos de uso
 			1 & Usuario presiona el botón ``Ofertas'' en el menú superior. & 2 & Sistema muestra pantalla del módulo de ofertas con el listado de las ofertas dependiendo del rol del usuario. \\ \hline
 			& & 3 & Fin. \\ \hline
 			\end{longtable}
-			\clearpage
+			
+%%Fin CU027
+
+			
+%% Inicio CU028
+
+		\clearpage
 		\item Caso de Uso CU028 - Administrar sistema
 		\begin{longtable}{|c|p{4cm}|c|p{7cm}|}
 			\hline
@@ -2942,6 +3508,9 @@ Especificacion de casos de uso
 			\end{compactitem} \\ \hline
 			& & 3 & Fin. \\ \hline
 			\end{longtable}
+			
+%%Fin CU028
+
 \end{enumerate}
 
 \subsubsection{Procesos del sistema}
