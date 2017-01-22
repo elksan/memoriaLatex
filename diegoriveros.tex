@@ -270,7 +270,7 @@ Controlador:
 El diseño web responsivo o adaptativo es una técnica de diseño web que busca la correcta visualización de una misma página en distintos dispositivos, ya sean computadores de escritorio a tablets y móviles. Es por esto que hoy en día es necesario que cualquier aplicación web se adapte a los diferentes tamaños de los mismos.
 
 \subsubsection{En qué consiste el diseño responsivo}
-Se trata de redimensionar y colocar los elementos de la web de forma que se adapten al ancho de cada dispositivo permitiendo una correcta visualización y una mejor experiencia de usuario. Se caracteriza porque los layouts (contenidos) e imágenes son fluidos y se usa código media-queries de CSS3.
+Se trata de redimensionar y colocar los elementos de la web de forma que se adapten al ancho de cada dispositivo permitiendo una correcta visualización y una mejor experiencia de usuario. Se caracteriza porque las plantillas e imágenes son fluidas y se usa código media-queries de CSS3.
 
 \begin{figure}[H]
 	\vspace*{1cm}
@@ -3937,9 +3937,9 @@ A continuación se muestra una especificación completa de todos los procesos y su
 \end{enumerate}
 
 
-\subsection{Dise\~{n}o t\'{e}cnico}
+\section{Dise\~{n}o t\'{e}cnico}
 
-\subsubsection{Diagrama de clases}
+\subsection{Diagrama de clases}
 \begin{figure}[H]
 	\vspace*{1cm}
 	\includegraphics[width=\linewidth]{memoriaIdea.png}
@@ -3947,7 +3947,9 @@ A continuación se muestra una especificación completa de todos los procesos y su
 	\caption{Diagrama de clases de la Aplicaci\'{o}n}
 \end{figure}
 
-\subsubsection{Modelo de datos}
+\subsection{Modelo de datos}
+
+\subsubsection{Diagrama de base de datos}
 \begin{figure}[H]
 	\vspace*{1cm}
 	\includegraphics[width=\linewidth]{modelo_datos.png}
@@ -3955,6 +3957,278 @@ A continuación se muestra una especificación completa de todos los procesos y su
 	\caption{Modelo de datos PRACUTAL}
 \end{figure}
 
+\clearpage
+\subsubsection{Diccionario de datos}
+
+\begin{enumerate}
+	\item Especificación de tablas
+
+	\begin{longtable}{|l|p{10cm}|}
+		\hline
+		Tabla & Descripción \\ \hline
+		user & Tabla que contiene las cuentas de usuario del sistema. \\ \hline
+		student & Tabla que tiene los datos del estudiante. \\ \hline
+		role & Tabla que contiene los roles del sistema. \\ \hline
+		role\_user & Tabla de relación del usuario con el rol. \\ \hline
+		career & Tabla que posee las carreras de la facultad. \\ \hline
+		offer & Tabla que almacena las ofertas de trabajos prácticos. \\ \hline
+		internship & Tabla que contiene los trabajos prácticos. \\ \hline
+		offer\_career & Tabla que almacena las carreras a la cuales está asociada la oferta. \\ \hline
+		organization & Tabla que contiene los datos de la empresa. \\ \hline
+		address & Tabla que contiene direcciones de los usuarios. \\ \hline
+		application & Tabla que almacena las postulaciones. \\ \hline
+		logbook & Tabla de almacena las entradas de una bitácora. \\ \hline
+		academic\_director & Tabla que contiene los datos del director de escuela. \\ \hline
+		evaluation & Tabla que guarda las evaluaciones de los trabajos prácticos. \\ \hline
+		offer\_type & Tabla que almacena los tipos de oferta. \\ \hline
+		verification\_token & Tabla que guarda token cuando a un usuario se le crea una cuenta. \\ \hline
+	\end{longtable}
+
+	\clearpage
+	\item Especificación de campos \\
+	\textbf{Tabla: user}
+	\begin{longtable}{|l|l|}
+		\hline
+		Nombre & Tipo de Dato \\ \hline
+		id & serial \\ \hline
+		created\_at & timestamp \\ \hline
+		current\_sign\_in\_at & timestamp \\ \hline
+		current\_sign\_in\_ip & inet \\ \hline
+		email & varchar(50) \\ \hline
+		password & varchar(512) \\ \hline
+		last\_sign\_in\_at & timestamp \\ \hline
+		last\_sign\_in\_ip & inet \\ \hline
+		remember\_created\_at & timestamp \\ \hline
+		reset\_password\_sent\_at & timestamp \\ \hline
+		reset\_password\_token & varchar(50) \\ \hline
+		sign\_in\_count & int \\ \hline
+		updated\_at & timestamp \\ \hline
+		name & varchar(50) \\ \hline
+		disabled & boolean \\ \hline
+		profile\_photo\_path & varchar(200) \\ \hline
+	\end{longtable}
+
+	\clearpage
+	\textbf{Tabla: student}
+	\begin{longtable}{|l|l|}
+		\hline
+		Nombre & Tipo de Dato \\ \hline
+		id & int \\ \hline
+		birthdate & date \\ \hline
+		job\_objective & text \\ \hline
+		entry\_year & int \\ \hline
+		rut & int \\ \hline
+		phone\_number & int \\ \hline
+		internships\_approved & int \\ \hline
+		priority\_score & int \\ \hline
+		updated\_at & timestamp \\ \hline
+		gender & varchar(15) \\ \hline
+		career\_id & int \\ \hline
+		registration\_number & int \\ \hline
+		last\_name & varchar(50) \\ \hline
+		mother\_last\_name & varchar(50) \\ \hline
+		curriculum & varchar(100) \\ \hline
+
+	\end{longtable}
+
+	\textbf{Tabla: role}
+	\begin{longtable}{|l|l|}
+		\hline
+		Nombre & Tipo de Dato \\ \hline
+		id & serial \\ \hline
+		name & varchar(100) \\ \hline
+		created\_at & timestamp \\ \hline
+		updated\_at & timestamp \\ \hline
+	\end{longtable}
+
+	\textbf{Tabla: role\_user}
+	\begin{longtable}{|l|l|}
+		\hline
+		Nombre & Tipo de Dato \\ \hline
+		role\_id & int \\ \hline
+		user\_id & int \\ \hline
+	\end{longtable}
+
+	\clearpage
+	\textbf{Tabla: career}
+	\begin{longtable}{|l|l|}
+		\hline
+		Nombre & Tipo de Dato \\ \hline		
+		career\_id & serial \\ \hline
+		career\_name & varchar(50) \\ \hline
+	\end{longtable}
+
+	\textbf{Tabla: offer}
+	\begin{longtable}{|l|l|}
+		\hline
+		Nombre & Tipo de Dato \\ \hline
+		organization\_id & serial \\ \hline
+		title & varchar(60) \\ \hline
+		created\_at & timestamp \\ \hline
+		description & text \\ \hline
+		disabled & boolean \\ \hline
+		duration & varchar(100) \\ \hline
+		email & varchar(100) \\ \hline
+		has\_income & boolean \\ \hline
+		has\_locomotion & boolean \\ \hline
+		has\_lunch & boolean \\ \hline
+		id & serial \\ \hline
+		requirements & text \\ \hline
+		start\_date\_available & date \\ \hline
+		end\_date\_available & date \\ \hline
+		start\_date\_internship & date \\ \hline
+		end\_date\_internship & date \\ \hline
+		area & varchar(100) \\ \hline
+		available & boolean \\ \hline
+		updated\_at & timestamp \\ \hline
+		position & varchar(60) \\ \hline
+		minimal\_level\_required & int \\ \hline
+		language & varchar(100) \\ \hline
+		income & int \\ \hline
+		locomotion & int \\ \hline
+		lunch & int \\ \hline
+		location & varchar(60) \\ \hline
+		offer\_type\_id & int \\ \hline
+		approved & boolean \\ \hline
+		closed & boolean \\ \hline
+		created\_by\_student & boolean \\ \hline
+		student\_offer\_approved & boolean \\ \hline
+		created\_by & int \\ \hline
+	\end{longtable}
+
+	\textbf{Tabla: internship}
+	\begin{longtable}{|l|l|}
+		\hline
+		Nombre & Tipo de Dato \\ \hline		
+		approved & boolean \\ \hline
+		closed & boolean \\ \hline
+		created\_at & timestamp \\ \hline
+		description & text \\ \hline
+		disabled & boolean \\ \hline
+		duration & varchar(50) \\ \hline
+		id & serial \\ \hline
+		start\_date & date \\ \hline
+		student\_id & int \\ \hline
+		organization\_id & int \\ \hline
+		updated\_at & timestamp \\ \hline
+		end\_date & date \\ \hline
+		offer\_id & int \\ \hline
+		title & varchar(60) \\ \hline
+	\end{longtable}
+
+	\textbf{Tabla: offer\_career}
+	\begin{longtable}{|l|l|}
+		\hline
+		Nombre & Tipo de Dato \\ \hline
+		offer\_id & int \\ \hline
+		career\_id & int \\ \hline
+	\end{longtable}
+
+	\clearpage
+	\textbf{Tabla: organization}
+	\begin{longtable}{|l|l|}
+		\hline
+		Nombre & Tipo de Dato \\ \hline
+		id & int \\ \hline
+		activity & varchar(100) \\ \hline
+		area & varchar(60) \\ \hline
+		created\_at & timestamp \\ \hline
+		disabled & boolean \\ \hline
+		description & text \\ \hline
+		updated\_at & timestamp \\ \hline
+		webpage & varchar(90) \\ \hline
+		phone\_number & int \\ \hline
+	\end{longtable}
+
+	\textbf{Tabla: address}
+	\begin{longtable}{|l|l|}
+		\hline
+		Nombre & Tipo de Dato \\ \hline
+		id & int \\ \hline
+		street\_name & varchar(100) \\ \hline
+		street\_number & int \\ \hline
+		apartment\_number & int \\ \hline
+		commune & varchar(50) \\ \hline
+		city & varchar(100) \\ \hline
+	\end{longtable}
+
+	\textbf{Tabla: application}
+	\begin{longtable}{|l|l|}
+		\hline
+		Nombre & Tipo de Dato \\ \hline
+		id & serial \\ \hline
+		offer\_id & int \\ \hline
+		student\_id & int \\ \hline
+		priority\_score & int \\ \hline
+		approved & boolean \\ \hline
+		status & varchar(50) \\ \hline
+		candidate & boolean \\ \hline
+		created\_at & timestamp \\ \hline
+		updated\_at & timestamp \\ \hline
+	\end{longtable}
+
+	\textbf{Tabla: logbook}
+	\begin{longtable}{|l|l|}
+		\hline
+		Nombre & Tipo de Dato \\ \hline		
+		id & serial \\ \hline
+		content & text \\ \hline
+		internship\_id & int \\ \hline
+		created\_at & timestamp \\ \hline
+		updated\_at & timestamp \\ \hline
+	\end{longtable}
+
+	\textbf{Tabla: academic\_director}
+	\begin{longtable}{|l|l|}
+		\hline
+		Nombre & Tipo de Dato \\ \hline		
+		id & serial \\ \hline
+		content & text \\ \hline
+		internship\_id & int \\ \hline
+		created\_at & timestamp \\ \hline
+		updated\_at & timestamp \\ \hline
+	\end{longtable}
+
+	\textbf{Tabla: evaluation}
+	\begin{longtable}{|l|l|}
+		\hline
+		Nombre & Tipo de Dato \\ \hline		
+		comment & varchar(255) \\ \hline
+		created\_at & timestamp \\ \hline
+		date & date \\ \hline
+		disabled & boolean \\ \hline
+		grade & decimal(3,2) \\ \hline
+		internship\_id & int \\ \hline
+		updated\_at & timestamp \\ \hline
+		id & int \\ \hline
+		filename & varchar(100) \\ \hline
+	\end{longtable}
+
+	\clearpage
+	\textbf{Tabla: offer\_type}
+	\begin{longtable}{|l|l|}
+		\hline
+		Nombre & Tipo de Dato \\ \hline		
+		id\_offer\_type & int \\ \hline
+		name\_type & varchar(50) \\ \hline
+		description & varchar(100) \\ \hline
+	\end{longtable}
+
+	\textbf{Tabla: verification\_token}
+	\begin{longtable}{|l|l|}
+		\hline
+		Nombre & Tipo de Dato \\ \hline		
+		token & varchar(256) \\ \hline
+		expiry\_date & timestamp \\ \hline
+		token\_type & varchar(50) \\ \hline
+		verified & boolean \\ \hline
+		user\_id & int \\ \hline
+		id & serial \\ \hline
+		user\_2\_id & int \\ \hline
+	\end{longtable}
+
+
+\end{enumerate}
 
 \subsection{Gesti\'{o}n de perfiles}
 Para solventar el correcto comportamiento de la aplicación, se han establecido una serie de perfiles de usuario, los cuales cuentan con distintos privilegios dependiendo del nivel de acceso  a la información que se requiera y otorgue.
@@ -4049,13 +4323,81 @@ La siguiente figura muestra a modo de diagrama las operaciones CRUD.
 	\caption{Operaciones CRUD}
 \end{figure}
 
+\section{Resumen del Capítulo}
+En el capítulo ``Desarrollo de la solución'' se exponen los detalles funcionales y técnicos contemplados en el desarrollo del software, donde se define su Arquitectura y tecnologías que lo sustentan. 
+Para el ítem de diseño funcional, se contemplan los requerimientos funcionales y no funcionales; luego se visualizan los diagramas de caso de uso y detalle de cada uno de ellos. Se incorporan además, definición de procesos de sistema, perfiles autorizados para el manejo de las funcionalidades que posee PRACUTAL.
+Para el ítem de diseño técnico, se especifica diagrama de clases y diagrama de navegación, incluyendo modelado de la base de datos y su formato/dominio detallado. Para la exploración de la aplicación web, se especifican frameworks front-end, indicando sus principales características y virtudes. Finalmente, se muestran resultados de la ejecución de una prueba de concepto, de acuerdo a la elección de tecnologías de utilizadas para la implementación de esta solución.
+
+\chapter{Aseguramiento de calidad}
+Para determinar que contempla el aseguramiento de calidad, es necesario definir previamente algunos conceptos:
+
+Aseguramiento de calidad del software: Es un conjunto de actividades para garantizar la calidad en los procesos de ingeniería de software (que finalmente dan como resultado la calidad de los productos de software).
+
+Dentro de los procesos se encuentran:
+\begin{itemize}
+	\item Metodología de desarrollo de software
+	\item Gestión de proyectos
+	\item Gestión de la configuración
+	\item Desarrollo/Gestión de Requisitos
+	\item Estimacion
+	\item Diseño de software
+	\item Pruebas
+	\item Etc.
+\end{itemize}
+
+Luego de que los procesos se encuentran definidos e implementados, se debe:
+\begin{itemize}
+	\item Identificar deficiencias en los procesos.
+	\item Corregir las debilidades para garantizar la mejora continua del proceso.
+\end{itemize}
+El aseguramiento de calidad abarca todo el ciclo de vida de desarrollo de software y el objetivo es asegurar que los procesos de desarrollo y/o mantenimiento se mejoren continuamente para producir productos que cumplan con las especificaciones/requisitos.
+
+\section{Pruebas de la aplicación web}
+Para asegurar el correcto funcionamiento del producto, se estableció realizar una serie de pruebas a la aplicación, con el fin de confirmar operatividad, usabilidad, y poder detectar, corregir errores o anomalías, previos a la entrega de su versión final.
+
+\subsection{Herramientas para pruebas}
+
+\begin{enumerate}
+	\item Pruebas de web responsiva: \\
+	Se utiliza como apoyo para visualizar la responsividad de la aplicación, las herramientas de desarrollador de google. Con esta herramienta se puede ajustar el tamaño del navegador para representar los distintos dispositivos. \\
+
+	Adicionalmente, se utiliza la herramienta ``Screenfly'' (quirktools.com), la cual que permite emular un dispositivo, ya sea móvil, tablet o pc y visualizar de manera amigable el contenido de la aplicación.
+
+	\item Prueba de interfaz: \\
+	Para las pruebas de interfaz, se realizan una serie de reuniones de demostración en conjunto con el usuario, con el fin de obtener retroalimentación y así determinar si la aplicación es intuitiva para su funcionamiento y si satisface la usabilidad de la misma.
+
+	\item Pruebas unitarias: \\
+	Para garantizar que los módulos de la aplicación funcionen correctamente, se realizan pruebas unitarias de los servicios, satisfaciendo su propósito por cada uno de los perfiles que lo utilizan.
+
+	\item Pruebas funcionales o de integración
+	Luego de confirmada la operatividad de cada uno de los servicios, se realiza revisión funcional de la aplicación, para determinar cumplimiento de flujo integral establecido en los procesos y actores relacionados.
+
+\end{enumerate}
+
+\subsection{Metodología}
+Como metodología adoptada, se determinó realizar reuniones de trabajo colaborativas, participando en ellas el usuario líder, profesor guía y desarrollador. Previo a la realización de esta actividad, se efectuaban pruebas del sistema, definiéndose como ciclos, cuya periodicidad fue establecida cada dos semanas. Esta revisión permitió una detección de errores temprana, con el fin de entregar un producto de software de aceptación para el usuario. Es importante destacar, que en todos los ciclos concretados, se abordaron tanto las pruebas funcionales como no funcionales.
+
+\subsection{Pruebas Funcionales y No funcionales}
+Las pruebas realizadas corresponden principalmente a pruebas funcionales/técnicas de la aplicación, incorporando además, pruebas de usabilidad y responsividad como parte de las No funcionales, cuya característica principal es determinar ``cómo trabaja el sistema''. \\
+
+Para clarificar estos puntos, se presenta una breve definición de los tipos de pruebas de impacto directo consideradas:
+\begin{itemize}
+	\item Pruebas Funcionales:  Su propósito es asegurar que el software cumpla con las especificaciones requeridas y eliminar los posibles defectos que éste pudiera tener.
+	\item Pruebas de usabilidad: Se pretende descubrir en qué grado el sistema cumple con un propósito determinado. Es una observación de cómo interactúan los usuarios, preferentemente representativos, con la interfaz.
+	\item Pruebas de responsividad: Tienen como principal objetivo determinar si el sistema responde al tamaño del dispositivo desde el que se está visualizando, adaptando las dimensiones del contenido y mostrando los elementos de una forma ordenada y optimizada sea cual sea el soporte.
+\end{itemize}
+
 
 %% ambiente glosario
-\begin{glosario}
-\item[El primer término:] Este es el significado del primer término, realmente no se bien lo que significa pero podría haberlo averiguado si hubiese tenido un poco mas de tiempo.
-\item[El segundo término:] Este si se lo que significa pero me da lata escribirlo...
+\begin{glosario}	
+	\item[PRACUTAL:] Sistema de gestión de prácticas de la Universidad de Talca.
+	\item[CRUD:] Responde a las siglas en inglés (Create, Read, Update and Delete), Crear, Leer, Actualizar y Eliminar. Se refiere a las operaciones que se pueden realizar en una base de datos.
+	\item[POC:] Prueba de concepto.
+	\item[Link:] Se refiere a hipervínculo.
+	\item[MVC:] Modelo Vista Controlador.
+	\item[Front-end:] Capa vista.
+	\item[Look \& Feel:] Apariencia del sistema.
 \end{glosario}
-
 
 %% genera las referencias
 \bibliography{refs}
