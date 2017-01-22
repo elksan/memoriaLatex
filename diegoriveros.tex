@@ -8,13 +8,12 @@
 %%\usepackage{tabularx}
 
 %% datos generales y para la tapa
-\titulo{Título de la Memoria}
+\titulo{Desarrollo e implementaci\'{o}n de un Sistema en apoyo a la gesti\'{o}n del Centro de pr\'{a}cticas de la Universidad de Talca}
 \author{Diego Ignacio Riveros Pinilla}
 \supervisor{Ben Ingram}
 \informantes
 {Federico Meza}
 {Renzo Angles}
-\adicional{(sólo por si se necesita agregar algún otro profesor)}
 \director{Federico Meza}
 \date{Diciembre, 2016}
 
@@ -26,12 +25,12 @@
 
 %% dedicatoria
 \begin{dedicatory}
-Dedicado a la Tuti
+Dedicado a Susana, mi madre y a mi familia en general
 \end{dedicatory}
 
 %% agradecimientos
 \begin{acknowledgment}
-Agradecimientos a Tuti, por el apoyo brindado en todo el proceso del desarrollo de mi memoria de t\'{i}tulo
+Agradecimientos a Susana, por el apoyo brindado en todo el proceso de desarrollo de mi memoria de t\'{i}tulo
 \end{acknowledgment}
 
 %% indices
@@ -41,7 +40,25 @@ Agradecimientos a Tuti, por el apoyo brindado en todo el proceso del desarrollo 
 
 %% resumen
 \begin{resumen}
-Aquí va el resumen (en Castellano)... 
+En esta memoria de título, se tiene como objetivo desarrollar una plataforma para la gestión de trabajos prácticos. Este sistema será utilizado por el Centro de Prácticas de la Facultad de Ingeniería.
+
+En los siguientes capítulos se detalla el contexto de este proyecto, objetivo general y específicos y la problemática a resolver por el alumno. Adicionalmente se incluye el marco teórico de este desarrollo entregando información de la situación actual y lo que se espera del sistema.
+
+A medida que se avanza en los capítulos, se indica la metodología de trabajo a utilizar, tanto para la gestión, elaboración del proyecto y pruebas de software.
+
+Para continuar, se describe todo el proceso de desarrollo de la solución, donde se mencionan aspectos como Arquitectura, Tecnologías y Herramientas  utilizadas.
+
+Posteriormente, se describe la etapa de diseño funcional, donde se detallan los requerimientos tanto funcionales como no funcionales; casos de usos principales del sistema y definición detallada de los procesos impactados, diferenciando el actor que los realiza.
+
+Se define un capítulo específico relacionado con el diseño técnico del software, donde se visualiza el diagrama de clases, modelo de datos, diccionario de datos con definición de tablas y campos; esquema de navegación del sistema y los distintos perfiles de usuario. Esto para que el lector tenga además del entendimiento funcional, los respectivos detalles técnicos en los que se basa la aplicación. 
+
+Por consiguiente, se entregan detalles de la prueba de concepto realizada en la fase de exploración de herramientas, con el fin de determinar factibilidad de implementación del diseño funcional/técnico planteado para el desarrollo de este proyecto.
+
+Luego de efectuada la programación de la aplicación, se describe el proceso de pruebas y aseguramiento de calidad, y se indica cómo fue abordado por el grupo de trabajo conformado por el usuario, profesor guía y desarrollador, incluyendo las herramientas utilizadas para cumplir con el propósito.
+
+En el último capítulo, se listan las conclusiones obtenidas, mencionando lo bueno, lo malo, cumplimiento de objetivos y recomendaciones a modo de trabajo futuro si se quisiera continuar mejorando el aplicativo. 
+
+Finalmente, esta memoria de título, considera como entregable, tanto la especificación del sistema, incluida en este proyecto y el resultado tangible de esto, plasmado en un producto de software funcional y operativo, generado del trabajo realizado en el periodo. 
 \end{resumen}
 
 %% abstract
@@ -134,7 +151,7 @@ En el presente apartado se mencionan las consideraciones que se deben contemplar
 \end{itemize}
 
 \section{Resumen del cap\'{i}tulo}
-En el primer capítulo anteriormente expuesto, se mencionan las principales características que tendrá el sistema "PRACUTAL", se incluyen descripción del contexto en el cual se basa su origen y, trabajo previo relacionado. Posteriormente se describen el problema actual y se realiza la propuesta de solución para abordar dicha situación.
+En el primer capítulo anteriormente expuesto, se mencionan las principales características que tendrá el sistema ``PRACUTAL'', se incluyen descripción del contexto en el cual se basa su origen y, trabajo previo relacionado. Posteriormente se describen el problema actual y se realiza la propuesta de solución para abordar dicha situación.
 
 Adicionalmente, se detallan el objetivo general y específicos de la aplicación; continuando con el alcance, consideraciones, restricciones y supuestos en los que se enmarca la implementación del software y desarrollo de esta memoria de título.
  
@@ -186,7 +203,7 @@ La arquitectura de capas se compone de los siguientes elementos:
 
 El objetivo de una arquitectura de N capas es intentar desacoplar estos componentes. 
 
-La más usada es la arquitectura de 3 capas la cual separa los componentes mencionados anteriormente como capas. La ventaja de este modelo es que deja estas capas desacopladas entre sí, dando la opción de que potencialmente cada componente puede estar alojado en una máquina diferente.
+La más usada es la arquitectura de 3 capas la cual separa los componentes mencionados anteriormente como capas. La ventaja de este modelo es que deja estas capas desacopladas entre sí, dando la opción de que potencialmente cada componente puede estar alojado en una máquina diferente. ~\cite{arquitectura1}
 
 Principios de esta arquitectura:
 \begin{itemize}
@@ -207,9 +224,9 @@ Descripción de las capas:
 \end{itemize}
 
 \subsection{Modelo - Vista - Controlador (MVC)}
-Modelo vista controlador se crea como solución para separar el núcleo del sistema de la presentación y la lógica de control que usa estas funcionalidades
+Modelo vista controlador se crea como solución para separar el núcleo del sistema de la presentación y la lógica de control que usa estas funcionalidades ~\cite{arquitectura2}
 
-Los componentes tienen las siguientes funcionalidades:
+Los componentes tienen las siguientes funcionalidades: \\
 Modelo:
 \begin{itemize}
 	\item Maneja el comportamiento los datos de la aplicación.
@@ -221,12 +238,11 @@ Vista:
 	\item Traduce el modelo a una mejor manera de interacción para el usuario. Múltiples vistas pueden estar basadas sobre el mismo modelo, para diferentes propósitos.
 	\item No hace procesamiento de datos.
 \end{itemize}
-
 Controlador:
 \begin{itemize}
 	\item Recibe una petición del usuario y se encarga de hacer las llamadas al modelo para luego enviar una respuesta a dicha petición. Es el encargado de decirle al modelo que datos se deben obtener para presentarla al usuario.
 	\item Acepta entradas desde el usuario y en virtud de esto, solicita al modelo y a la vista realizar acciones basadas en la entrada.
-\end{itemize}
+\end{itemize} 
 
 \subsubsection{MVC en aplicación web:}
 El patrón MVC en una aplicación web se compone de las siguientes tecnologías:
@@ -270,7 +286,7 @@ Controlador:
 El diseño web responsivo o adaptativo es una técnica de diseño web que busca la correcta visualización de una misma página en distintos dispositivos, ya sean computadores de escritorio a tablets y móviles. Es por esto que hoy en día es necesario que cualquier aplicación web se adapte a los diferentes tamaños de los mismos.
 
 \subsubsection{En qué consiste el diseño responsivo}
-Se trata de redimensionar y colocar los elementos de la web de forma que se adapten al ancho de cada dispositivo permitiendo una correcta visualización y una mejor experiencia de usuario. Se caracteriza porque las plantillas e imágenes son fluidas y se usa código media-queries de CSS3.
+Se trata de redimensionar y colocar los elementos de la web de forma que se adapten al ancho de cada dispositivo permitiendo una correcta visualización y una mejor experiencia de usuario. Se caracteriza porque las plantillas e imágenes son fluidas y se usa código media-queries de CSS3.~\cite{responsive1}
 
 \begin{figure}[H]
 	\vspace*{1cm}
@@ -288,13 +304,6 @@ En definitiva, el diseño web responsiva se consolida como una de las mejores prá
 En el segundo capítulo presentado, se expone el marco teórico en el que se basa el desarrollo de esta aplicación. 
 En primer lugar, se define el contexto en el que el sistema PRACUTAL fue concebido, indicando su propósito y parte de su historia inicial. Posteriormente, se mencionan detalles del desarrollo de aplicaciones web, poniendo énfasis en definir conceptos relacionados con: Arquitectura Cliente-Servidor; Modelo de capas; Modelo Vista-Controlador y finalmente, explicando concepto y objetivos de una web responsiva, todo lo anterior, para clarificar y fundamentar los puntos en los que se sostiene este proyecto.
 
-
-Sólo para probar algunas cosas como las referencias.
-La primera cita es a Lamport~\cite{lamport79}.
-La segunda cita es para Lamport nuevamente~\cite{lamport78}.
-La última cita es para Keleher \emph{et al.}~\cite{keleher92}.
-
-
 %% contenido del tercer capítulo
 \chapter{Metodolog\'{i}as}
 
@@ -302,7 +311,7 @@ La última cita es para Keleher \emph{et al.}~\cite{keleher92}.
 
 \subsection{Agile}
 Como antecedente, se tiene que los diseñadores de software durante los últimos 50 años han mantenido como premisa basar el ciclo de vida de un proyecto bajo la metodología de cascada. El asunto es que el desarrollo del proyecto nunca se lleva a cabo de manera secuencial, ya que la aparición de cambios a medida que avanza supone rectificar pasos anteriores.
-Agile, se define como un marco de trabajo basado en un manifiesto publicado en el año 2001 cuyos principios son el valor del ``work in progress'', la responsabilidad de cada individuo durante el desarrollo y una actitud positiva de respuesta frente a los cambios. Corresponde a una metodología propia que acepta que los problemas no estén bien definidos y que el desarrollo del proyecto sea dinámico y esté abierto a los cambios.
+Agile, se define como un marco de trabajo basado en un manifiesto publicado en el año 2001 cuyos principios son el valor del ``work in progress'', la responsabilidad de cada individuo durante el desarrollo y una actitud positiva de respuesta frente a los cambios. Corresponde a una metodología propia que acepta que los problemas no estén bien definidos y que el desarrollo del proyecto sea dinámico y esté abierto a los cambios. ~\cite{rosallop1}
 
 \subsection{Kanban}
 Kanban es un marco popular que utilizan los equipos de software que practican el desarrollo de software ágil. Esta metodología se remonta a más de 50 años.
@@ -319,7 +328,9 @@ En un desarrollo de proyecto Agile utilizando Kanban, el proyecto se planifica d
 	\item Hecho. 
 \end{itemize}
 Cabe señalar que dependiendo del tamaño, la estructura y los objetivos del equipo, el flujo de trabajo se puede asignar para cumplir el proceso único de cualquier equipo determinado.
-La metodología kanban se basa en una transparencia total del trabajo y una comunicación en tiempo real de la capacidad. Por lo tanto, el tablero de kanban debería considerarse la única fuente fiable sobre el trabajo del equipo.
+La metodología kanban se basa en una transparencia total del trabajo y una comunicación en tiempo real de la capacidad. Por lo tanto, el tablero de kanban debería considerarse la única fuente fiable sobre el trabajo del equipo. ~\cite{atlassian}
+
+En cuanto al sistema escogido para aplicar esta metodología, se utilizan las opciones de desarrollo agile que ofrece Taiga ~\cite{taiga} ya que es una herramienta sin costo y posee tablero kanban, además cuenta con integración con una sala de reuniones virtual.
 
 \section{Resumen del cap\'{i}tulo}
 En el capítulo anterior, se detalla la Metodología de desarrollo de software utilizada para la implementación de PRACUTAL. Dentro de las existentes en la actualidad, se elige usar ``Agile'' como procedimiento, ya que corresponde a una metodología dinámica, práctica y fácil de gestionar. 
@@ -427,7 +438,7 @@ Finalmente, se opta por la utilización de Ninja Framework, al ser éste un framew
 	RF035 & Visualizar director de escuela & El sistema debe permitir ver detalle del director de escuela creado. & Medio \\ \hline
 	RF036 & Crear carrera & El sistema debe permitir crear una nueva carrera. & Medio \\ \hline
 	RF037 & Editar carrera & El sistema debe permitir editar información de la carrera. & Medio \\ \hline
-	RF038 & Visualizar carrera & El sistema debe permitir ver detalle de una carrera. & Medio \\ \hline
+	RF038 & Eliminar carrera & El sistema debe permitir eliminar una carrera. & Medio \\ \hline
 	RF039 & Crear módulo de gestión de prácticas & El sistema debe proveer un módulo para la gestión de prácticas. & Alto \\ \hline
 	RF040 & Generar módulo de gestión de ofertas & El sistema debe proveer un módulo para la gestión de ofertas. & Alto \\ \hline
 	RF041 & Generar módulo de administración & El sistema debe proveer un módulo que se encargue de la administración general de la aplicación. & Alto \\ \hline
@@ -3897,6 +3908,7 @@ A continuación se muestra una especificación completa de todos los procesos y su
 		\end{enumerate}		
 	\end{enumerate}
 
+	\clearpage
 	\item SubProceso PR01.3 Confirmar estudiante
 	\begin{figure}[H]
 		\vspace*{1cm}
@@ -3945,6 +3957,14 @@ A continuación se muestra una especificación completa de todos los procesos y su
 	\includegraphics[width=\linewidth]{memoriaIdea.png}
 	\vspace*{1cm}
 	\caption{Diagrama de clases de la Aplicaci\'{o}n}
+\end{figure}
+
+\subsection{Esquema de navegación}
+\begin{figure}[H]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{EsquemaNavegacion.png}
+	\vspace*{1cm}
+	\caption{Diagrama de navegación global en aplicación PRACUTAL}
 \end{figure}
 
 \subsection{Modelo de datos}
@@ -4243,8 +4263,9 @@ Los tipos de usuario definidos inicialmente corresponden a cuatro perfiles, los 
 	\item Estudiante: El rol del estudiante se basa principalmente en postular a ofertas vigentes y llevar registro de su trabajo. 
 	\item Organización: Tiene como función, ofertar trabajos prácticos, seleccionar y evaluar a los estudiantes.
 \end{itemize}
-Tareas específicas por perfil
-\\
+
+\subsubsection{Tareas específicas por perfil}
+
 Centro Prácticas:
 \begin{itemize}
 	\item Ofertar prácticas para alumnos de la facultad.
@@ -4253,6 +4274,7 @@ Centro Prácticas:
 	\item Enviar candidatos a la Organización.
 	\item Mantener módulo de administración del sistema.
 \end{itemize}
+
 Director de escuela:
 \begin{itemize}
 	\item Ofertar prácticas para alumnos de la facultad.
@@ -4260,12 +4282,14 @@ Director de escuela:
 	\item Revisar si oferta de práctica cumple con los requisitos que la universidad establece.
 	\item Enviar candidatos a la Organización. 
 \end{itemize}
+
 Estudiante:
 \begin{itemize}
 	\item Ingresar prácticas conseguidas de manera individual.
 	\item Postular a alguna práctica ofertada en la plataforma.
 	\item Llevar una bitácora de la práctica adjudicada.
 \end{itemize}
+
 Organización:
 \begin{itemize}
 	\item Ofertar prácticas para alumnos de la facultad según sus habilidades y conocimientos.
@@ -4286,7 +4310,7 @@ Dentro del análisis de prefactibilidad del desarrollo de la aplicación, se tiene
 	\item Aplicación responsiva.
 \end{itemize}
 
-Con estos puntos como base, es que se analizan las tendencias de diseño web, donde algunas de las principales son: Bootstrap, Foundation y Materialize, de los cuales podemos comparar su principal característica como front-end.
+Con estos puntos como base, es que se analizan las tendencias de diseño web, donde algunas de las principales son: Bootstrap, Foundation y Materialize, de los cuales podemos comparar su principal característica como front-end. ~\cite{stackshare1}
 
 \begin{table}[h]
 	\vspace*{1cm}
@@ -4326,12 +4350,12 @@ La siguiente figura muestra a modo de diagrama las operaciones CRUD.
 \section{Resumen del Capítulo}
 En el capítulo ``Desarrollo de la solución'' se exponen los detalles funcionales y técnicos contemplados en el desarrollo del software, donde se define su Arquitectura y tecnologías que lo sustentan. 
 Para el ítem de diseño funcional, se contemplan los requerimientos funcionales y no funcionales; luego se visualizan los diagramas de caso de uso y detalle de cada uno de ellos. Se incorporan además, definición de procesos de sistema, perfiles autorizados para el manejo de las funcionalidades que posee PRACUTAL.
-Para el ítem de diseño técnico, se especifica diagrama de clases y diagrama de navegación, incluyendo modelado de la base de datos y su formato/dominio detallado. Para la exploración de la aplicación web, se especifican frameworks front-end, indicando sus principales características y virtudes. Finalmente, se muestran resultados de la ejecución de una prueba de concepto, de acuerdo a la elección de tecnologías de utilizadas para la implementación de esta solución.
+Para el ítem de diseño técnico, se especifica diagrama de clases y diagrama de navegación, incluyendo modelado de la base de datos y su formato. Para la exploración de la aplicación web, se especifican frameworks front-end, indicando sus principales características y virtudes. Finalmente, se muestran resultados de la ejecución de una prueba de concepto, de acuerdo a la elección de tecnologías de utilizadas para la implementación de esta solución.
 
 \chapter{Aseguramiento de calidad}
 Para determinar que contempla el aseguramiento de calidad, es necesario definir previamente algunos conceptos:
 
-Aseguramiento de calidad del software: Es un conjunto de actividades para garantizar la calidad en los procesos de ingeniería de software (que finalmente dan como resultado la calidad de los productos de software).
+Aseguramiento de calidad del software: Es un conjunto de actividades para garantizar la calidad en los procesos de ingeniería de software (que finalmente dan como resultado la calidad de los productos de software). ~\cite{softwaretestingfundamentals}
 
 Dentro de los procesos se encuentran:
 \begin{itemize}
@@ -4359,9 +4383,9 @@ Para asegurar el correcto funcionamiento del producto, se estableció realizar un
 
 \begin{enumerate}
 	\item Pruebas de web responsiva: \\
-	Se utiliza como apoyo para visualizar la responsividad de la aplicación, las herramientas de desarrollador de google. Con esta herramienta se puede ajustar el tamaño del navegador para representar los distintos dispositivos. \\
+	Se utiliza como apoyo para visualizar la responsividad de la aplicación, las herramientas de desarrollador de google. Con esta herramienta se puede ajustar el tamaño del navegador para representar los distintos dispositivos.
 
-	Adicionalmente, se utiliza la herramienta ``Screenfly'' (quirktools.com), la cual que permite emular un dispositivo, ya sea móvil, tablet o pc y visualizar de manera amigable el contenido de la aplicación.
+	Adicionalmente, se utiliza la herramienta ``Screenfly'' ~\cite{quirktools1}, la cual que permite emular un dispositivo, ya sea móvil, tablet o pc y visualizar de manera amigable el contenido de la aplicación.
 
 	\item Prueba de interfaz: \\
 	Para las pruebas de interfaz, se realizan una serie de reuniones de demostración en conjunto con el usuario, con el fin de obtener retroalimentación y así determinar si la aplicación es intuitiva para su funcionamiento y si satisface la usabilidad de la misma.
@@ -4377,6 +4401,8 @@ Para asegurar el correcto funcionamiento del producto, se estableció realizar un
 \subsection{Metodología}
 Como metodología adoptada, se determinó realizar reuniones de trabajo colaborativas, participando en ellas el usuario líder, profesor guía y desarrollador. Previo a la realización de esta actividad, se efectuaban pruebas del sistema, definiéndose como ciclos, cuya periodicidad fue establecida cada dos semanas. Esta revisión permitió una detección de errores temprana, con el fin de entregar un producto de software de aceptación para el usuario. Es importante destacar, que en todos los ciclos concretados, se abordaron tanto las pruebas funcionales como no funcionales.
 
+En cuanto a la herramienta utilizada para las reuniones de trabajo en equipo, se determinó por usar ``appear.in'' como sala de reuniones virtual. Dicha sala, viene integrada dentro del sitio de Taiga y permite compartir voz, video y pantalla.
+
 \subsection{Pruebas Funcionales y No funcionales}
 Las pruebas realizadas corresponden principalmente a pruebas funcionales/técnicas de la aplicación, incorporando además, pruebas de usabilidad y responsividad como parte de las No funcionales, cuya característica principal es determinar ``cómo trabaja el sistema''. \\
 
@@ -4387,6 +4413,81 @@ Para clarificar estos puntos, se presenta una breve definición de los tipos de p
 	\item Pruebas de responsividad: Tienen como principal objetivo determinar si el sistema responde al tamaño del dispositivo desde el que se está visualizando, adaptando las dimensiones del contenido y mostrando los elementos de una forma ordenada y optimizada sea cual sea el soporte.
 \end{itemize}
 
+\subsection{Resultados}
+En las reuniones cada 2 semanas para la presentación del sistema, se logró identificar en conjunto con el usuario y el profesor guía, algunos errores en la funcionalidad de la aplicación. Estos eran agregados como incidencias en el tablero agile (kanban) que el desarrollador lleva como guía, para así tener un registro y poder remediar estos con celeridad.
+
+Al concretarse las reuniones de trabajo colaborativo, el usuario final lograba tener un entendimiento mayor del funcionamiento de la aplicación y se daba la oportunidad de sugerir cambios o incorporar mejoras al sistema, obteniendo retroalimentación mutua.
+
+Luego de depuradas las observaciones o incidencias, se tuvo mejores resultados de la operatividad de la aplicación, lo que contribuyó a que en la siguiente iteración, se presentará una versión más estable y robusta del sistema, llegando a un producto final funcional.
+
+\section{Resumen del Capítulo}
+Para explicar el capítulo 5, el factor principal corresponde a ``Pruebas''. Inicialmente se menciona el concepto de aseguramiento de calidad; pruebas, y herramientas para probar una aplicación web. Se definen los conceptos de pruebas funcionales y no funcionales, indicando diferencias y características de cada una. Además, se indica la metodología de trabajo para abordar el desarrollo y pruebas, que se adoptó en el transcurso del proyecto.
+
+\chapter{Conclusiones}
+
+\section{Producto software}
+En esta memoria de título se desarrolló un sistema que será un apoyo a la gestión del centro de prácticas de la facultad. 
+
+El sistema al haber sido desarrollado bajo un buen framework y siguiendo estándares de codificación, constituye una ventaja a futuro, ya que se favorece el mantenimiento y escalabilidad de la herramienta.
+
+Otro punto a considerar, es el relacionado con el código fuente, el cual está a disposición de cualquier persona que desee mejorar la aplicación en el sitio Github.
+
+Como experiencia, el utilizar tecnologías basadas en JAVA, contribuyó a no tener una curva de aprendizaje tan elevada al momento de desarrollar y esto trajo como resultado presentar siempre versiones funcionales del sistema.
+
+Es importante mencionar, que al usar herramientas de software libre resulta ventajoso para la institución, suprimiendo el pago de licencias para que la aplicación permanezca operativa.
+
+\section{Herramientas y tecnologías utilizadas}
+
+\subsection*{Lo bueno}
+\begin{itemize}
+	\item Ventajas de Full stack:
+	\begin{itemize}
+		\item Prototipos rápidos
+		\item Posee integración entre servidor y aplicación
+	\end{itemize}
+	\item Ventajas de Ninja framework:
+	\begin{itemize}
+		\item Cumple con full stack y java.
+		\item  Se sostiene bajo las tecnologías ya robustas y probadas (``no reinventa la rueda'').
+		\item  Tecnología escalable.
+		\item  100\% java.
+		\item  Sus requerimientos previos solo contemplan tener instalado java 7 o superior y Maven 3 o superior.
+		\item  Al estar desarrollado con maven facilita el empaquetado y despliegue.
+		\item  Ninja framework al usar jetty como servidor propio, se abstrae de la utilización de un servidor externo en la máquina donde se desea ejecutar (modo stand-alone).
+	\end{itemize}
+	\item Ventajas Modelo de capas:
+	\begin{itemize}
+		\item Fácil de mantener.
+		\item Componentes son reutilizables.
+		\item Desarrollo más rápido ya que el trabajo puede ser dividido.
+	\end{itemize}
+\end{itemize}
+
+\subsection*{Lo malo}
+\begin{itemize}
+	\item Poco conocimiento del cliente sobre cómo usar las herramientas Agile.
+	\item Trabajo extra para mantener tablero Kanban actualizado, ya que el desarrollador tuvo que ingresar tareas de desarrollo como de usuario.
+	\item Ninja framework al no ser una herramienta muy popular, no cuenta con mucha documentación, además de su sitio oficial y un par de sitios más. Pero se pudo solventar el desarrollo con la información existente en estas páginas.
+	\item Hacer el cambio de Bootstrap a Materializecss presentó un desafío extra, ya que no viene embebido en ninja framework.	
+\end{itemize}
+
+\section{Cumplimiento de objetivos}
+Se logra satisfacer el principal objetivo de esta memoria de título, el cual es poder contar con una aplicación de apoyo a la gestión del Centro de prácticas, que logra reemplazar al trabajo previo realizado en el ramo de Ingeniería de software.
+
+El desarrollo del sistema satisface los requerimientos funcionales y no funcionales planteados en una etapa inicial, ajustados y consensuados con el usuario y profesor guía.
+
+Al término de esta memoria de título se cumple con alojar la aplicación en un servidor de la Universidad (bri2.utalca.cl). Lo que permite el uso del sistema para toda la comunidad perteneciente a la facultad de ingeniería de la Institución.
+
+\section{Trabajo futuro}
+Luego de realizada la implementación del Sistema PRACUTAL, como visión a futuro, se tienen las siguientes recomendaciones a modo de mejoras o incorporación de nuevas funcionalidades:
+\begin{itemize}
+	\item Cambiar ``look \& feel'' de la aplicación para seguir estándar de Web de la Universidad.
+	\item Conectar autenticación de estudiantes a través de servidor LDAP de la Universidad.
+	\item Incorporación de nuevas funcionalidades si se requieren.
+	\item Ampliar sistema para que soporte el universo de estudiantes del resto de facultades que existen en la Universidad.
+	\item Incorporar reportes estadísticos.
+	\item Mejora continua del proceso de gestión de prácticas.
+\end{itemize}
 
 %% ambiente glosario
 \begin{glosario}	
@@ -4397,6 +4498,7 @@ Para clarificar estos puntos, se presenta una breve definición de los tipos de p
 	\item[MVC:] Modelo Vista Controlador.
 	\item[Front-end:] Capa vista.
 	\item[Look \& Feel:] Apariencia del sistema.
+	\item[Stand-Alone:] No necesita dependencias para funcionar.
 \end{glosario}
 
 %% genera las referencias
@@ -4407,24 +4509,194 @@ Para clarificar estos puntos, se presenta una breve definición de los tipos de p
 \appendixpart
 
 %% contenido del primer anexo
-\appendix{El Primer Anexo}
-Aquí va el texto del primer anexo...
+\appendix{Pantallas del sistema}
+A continuaci\'{o}n se anexa dise\~{n}o de pantallas que posee el sistema PRACUTAL.
 
-\section{La primera sección del primer anexo}
-Aquí va el texto de la primera sección del primer anexo...
+\begin{figure}[h]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{captura1.png}
+	\vspace*{1cm}
+	\caption{Pantalla de ingreso al sistema}
+\end{figure}
 
-\section{La segunda sección del primer anexo}
-Aquí va el texto de la segunda sección del primer anexo...
+\begin{figure}[h]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{captura2.png}
+	\vspace*{1cm}
+	\caption{Pantalla de ingreso de datos para acceder a aplicación}
+\end{figure}
 
-\subsection{La primera subsección de la segunda sección del primer anexo}
+\begin{figure}[h]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{captura3.png}
+	\vspace*{1cm}
+	\caption{Pantalla con listado de estudiantes}
+\end{figure}
 
+\begin{figure}[h]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{captura4.png}
+	\vspace*{1cm}
+	\caption{Pantalla de visualización de perfil de un estudiante}
+\end{figure}
 
-%% contenido del segundo anexo
-\appendix{El segundo Anexo}
-Aquí va el texto del segundo anexo...
+\begin{figure}[h]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{captura5.png}
+	\vspace*{1cm}
+	\caption{Pantalla de edición de información estudiante}
+\end{figure}
 
-\section{La primera sección del segundo anexo}
-Aquí va el texto de la primera sección del segundo anexo...
+\begin{figure}[h]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{captura6.png}
+	\vspace*{1cm}
+	\caption{Pantalla con listado de empresas}
+\end{figure}
+
+\begin{figure}[h]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{captura7.png}
+	\vspace*{1cm}
+	\caption{Pantalla de visualización de perfil de una empresa}
+\end{figure}
+
+\begin{figure}[h]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{captura8.png}
+	\vspace*{1cm}
+	\caption{Pantalla de edición de información empresa}
+\end{figure}
+
+\begin{figure}[h]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{captura9.png}
+	\vspace*{1cm}
+	\caption{Pantalla de reportes disponibles}
+\end{figure}
+
+\begin{figure}[h]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{captura10.png}
+	\vspace*{1cm}
+	\caption{Pantalla con detalle de reporte alumnos con práctica adjudicada}
+\end{figure}
+
+\begin{figure}[h]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{captura11.png}
+	\vspace*{1cm}
+	\caption{Pantalla de Administración de sistema}
+\end{figure}
+
+\begin{figure}[h]
+	\vspace*{1cm}
+	\centering
+	\includegraphics[width=.3\linewidth]{captura12.png}
+	\vspace*{1cm}
+	\caption{Pantalla de menú lateral opción ``Nueva carrera''}
+\end{figure}
+
+\begin{figure}[h]
+	\vspace*{1cm}
+	\centering
+	\includegraphics[width=.3\linewidth]{captura13.png}
+	\vspace*{1cm}
+	\caption{Pantalla de menú lateral opción ``Importar estudiantes''}
+\end{figure}
+
+\begin{figure}[h]
+	\vspace*{1cm}
+	\centering
+	\includegraphics[width=.3\linewidth]{captura14.png}
+	\vspace*{1cm}
+	\caption{Pantalla de menú lateral opción ``Nuevo estudiante''}
+\end{figure}
+
+\begin{figure}[h]
+	\vspace*{1cm}
+	\centering
+	\includegraphics[width=.3\linewidth]{captura15.png}
+	\vspace*{1cm}
+	\caption{Pantalla de menú lateral opción ``Nueva empresa''}
+\end{figure}
+
+\begin{figure}[h]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{captura16.png}
+	\vspace*{1cm}
+	\caption{Pantalla de ingreso de nueva carrera}
+\end{figure}
+
+\begin{figure}[h]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{captura17.png}
+	\vspace*{1cm}
+	\caption{Pantalla para importar estudiantes}
+\end{figure}
+
+\begin{figure}[h]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{captura18.png}
+	\vspace*{1cm}
+	\caption{Pantalla de ingreso de nuevo estudiante}
+\end{figure}
+
+\begin{figure}[h]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{captura19.png}
+	\vspace*{1cm}
+	\caption{Pantalla de ingreso de nueva empresa}
+\end{figure}
+
+\begin{figure}[h]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{captura20.png}
+	\vspace*{1cm}
+	\caption{Pantalla de prácticas de un alumno}
+\end{figure}
+
+\begin{figure}[h]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{captura21.png}
+	\vspace*{1cm}
+	\caption{Pantalla con listado de ofertas}
+\end{figure}
+
+\begin{figure}[h]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{captura22.png}
+	\vspace*{1cm}
+	\caption{Pantalla con detalle de oferta}
+\end{figure}
+
+\begin{figure}[h]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{captura23.png}
+	\vspace*{1cm}
+	\caption{Pantalla de edición de oferta}
+\end{figure}
+
+\begin{figure}[h]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{captura24.png}
+	\vspace*{1cm}
+	\caption{Pantalla de ingreso de oferta}
+\end{figure}
+
+\begin{figure}[h]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{captura25.png}
+	\vspace*{1cm}
+	\caption{Pantalla de visualización de bitácora}
+\end{figure}
+
+\begin{figure}[h]
+	\vspace*{1cm}
+	\includegraphics[width=\linewidth]{captura26.png}
+	\vspace*{1cm}
+	\caption{Pantalla de evaluación de práctica}
+\end{figure}
 
 %% fin
 \end{document}
